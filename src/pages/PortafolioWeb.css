@@ -162,6 +162,8 @@
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
+.pw-card__cta img { width: 1em; height: 1em; filter: invert(1); }
+.pw-card__cta:hover img { filter: none; }
 
 .pw-cta {
   background: #000;

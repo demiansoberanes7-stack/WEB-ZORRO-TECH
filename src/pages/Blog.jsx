@@ -8,7 +8,7 @@ export default function Blog() {
     <div className="lm-page">
       <header className="lm-topbar">
         <Link to="/" className="lm-topbar__brand" aria-label="Zorro Tech, inicio">Zorro<span>Tech</span></Link>
-        <Link to="/" className="lm-topbar__back">← Volver al inicio</Link>
+        <Link to="/" className="lm-topbar__back"><img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/solid/arrow-left.svg" alt="" aria-hidden="true" /> Volver al inicio</Link>
       </header>
 
       <section className="lm-hero">

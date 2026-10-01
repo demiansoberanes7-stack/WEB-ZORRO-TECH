@@ -54,6 +54,7 @@
 }
 
 .lm-topbar__back:hover { background: #000; color: #fff; }
+.lm-topbar__back img { width: 0.95em; height: 0.95em; }
 
 .lm-container {
   position: relative;
