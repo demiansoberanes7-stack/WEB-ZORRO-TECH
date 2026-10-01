@@ -26,7 +26,7 @@ function HomePage({ onPreorder }) {
       <a href="#main" className="skip-link">Ir al contenido</a>
       <Header onPreorder={onPreorder} />
       <main id="main" tabIndex={-1}>
-        <Hero onPreorder={onPreorder} />
+        <Hero />
         <AudienceSection />
         <DemoSection />
         <BentoSection />

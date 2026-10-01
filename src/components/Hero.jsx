@@ -4,7 +4,7 @@ import './Hero.css';
 
 const HERO_VIDEO = '/assets/fox-typing-and-waving.mp4';
 
-export default function Hero({ onPreorder }) {
+export default function Hero() {
   const scene = useScrollScene();
   const width = useTransform(scene.progress, [0, .2, 1], ['100%', '100%', '24vw']);
   const height = useTransform(scene.progress, [0, .2, 1], ['100%', '100%', '28svh']);
@@ -17,7 +17,7 @@ export default function Hero({ onPreorder }) {
         <motion.div className="hero__content" style={scene.enabled ? { opacity } : {}}>
           <h1>Facilitamos tus procesos tecnológicos</h1>
           <p>Sitios web, invitaciones digitales y mantenimiento de equipo de cómputo<br /> para pequeños negocios.</p>
-          <button className="button" onClick={onPreorder}>Quiero empezar</button>
+          <a className="button" href="https://wa.me/526645495385?text=Hola%2C%20me%20interesa%20comenzar%20con%20sus%20servicios." target="_blank" rel="noreferrer">Quiero empezar</a>
           <p className="hero__subtitle">Tijuana · Soluciones accesibles · Sin complicaciones</p>
         </motion.div>
       </motion.div>

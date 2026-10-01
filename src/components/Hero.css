@@ -6,7 +6,7 @@
 .hero__content { position: absolute; left: 1.4vw; bottom: 1.4vw; z-index: 1; width: 52vw; color: var(--color-white); }
 .hero h1 { font-size: 5.5vw; font-weight: 500; letter-spacing: -.045em; line-height: .98; color: var(--color-white); }
 .hero__content p { margin: 24px 0 32px; font-size: clamp(19px, 1.4vw, 28px); line-height: 1.3; letter-spacing: -.025em; color: #ffffffbf; }
-.hero__content .button { display: block; width: fit-content; margin: 0 auto; background: #2563eb; color: #fff; padding: 24px 38px; font-size: 20px; }
+.hero__content .button { display: block; width: fit-content; margin: 0 auto; background: #2563eb; color: #fff; border: 3px solid #0a1a3f; padding: 24px 38px; font-size: 20px; }
 .hero__subtitle { margin-top: 12px; font-size: clamp(12px, 1vw, 16px); color: #888; letter-spacing: 0.05em; }
 .hero.scene-static { height: auto; }
 .scene-static .hero__camera { height: 100svh; min-height: 620px; padding: 12px; }
