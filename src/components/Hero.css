@@ -4,9 +4,9 @@
 .hero__mask::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, #010f2b33, transparent 60%); pointer-events: none; }
 .hero__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(1.05) contrast(1.1) saturate(1.05); }
 .hero__content { position: absolute; left: 1.4vw; bottom: 1.4vw; z-index: 1; width: 52vw; color: var(--color-white); }
-.hero h1 { font-size: 5vw; font-weight: 500; letter-spacing: -.045em; line-height: .98; color: var(--color-white); }
-.hero__content p { margin: 24px 0 32px; font-size: clamp(17px, 1.2vw, 25px); line-height: 1.3; letter-spacing: -.025em; color: #ffffffbf; }
-.hero__content .button { background: var(--color-white); color: var(--color-dark-blue); padding: 22px 34px; font-size: 18px; }
+.hero h1 { font-size: 5.5vw; font-weight: 500; letter-spacing: -.045em; line-height: .98; color: var(--color-white); }
+.hero__content p { margin: 24px 0 32px; font-size: clamp(19px, 1.4vw, 28px); line-height: 1.3; letter-spacing: -.025em; color: #ffffffbf; }
+.hero__content .button { display: block; width: fit-content; margin: 0 auto; background: #2563eb; color: #fff; padding: 24px 38px; font-size: 20px; }
 .hero__subtitle { margin-top: 12px; font-size: clamp(12px, 1vw, 16px); color: #888; letter-spacing: 0.05em; }
 .hero.scene-static { height: auto; }
 .scene-static .hero__camera { height: 100svh; min-height: 620px; padding: 12px; }
@@ -19,8 +19,8 @@
   .scroll-scene .hero__mask { border-radius: 16px; }
   .scroll-scene .hero__content { left: 16px; right: 16px; bottom: 20px; width: auto; }
   .scroll-scene .hero h1 { font-size: clamp(28px, 7vw, 48px); }
-  .scroll-scene .hero__content p { font-size: clamp(14px, 3vw, 18px); margin: 12px 0 20px; }
-  .scroll-scene .hero__content .button { padding: 16px 28px; font-size: 16px; }
+  .scroll-scene .hero__content p { font-size: clamp(15px, 3.2vw, 20px); margin: 12px 0 20px; }
+  .scroll-scene .hero__content .button { padding: 17px 30px; font-size: 17px; }
 }
 @media (max-width: 480px) {
   .hero { height: 140svh; }
@@ -28,8 +28,8 @@
   .scroll-scene .hero__mask { border-radius: 12px; }
   .scroll-scene .hero__content { left: 12px; right: 12px; bottom: 16px; }
   .scroll-scene .hero h1 { font-size: clamp(24px, 7vw, 40px); }
-  .scroll-scene .hero__content p { font-size: clamp(13px, 3vw, 16px); margin: 8px 0 16px; }
-  .scroll-scene .hero__content .button { padding: 14px 24px; font-size: 15px; }
+  .scroll-scene .hero__content p { font-size: clamp(14px, 3.2vw, 18px); margin: 8px 0 16px; }
+  .scroll-scene .hero__content .button { padding: 15px 26px; font-size: 16px; }
 }
 @media (max-width: 600px) { .hero__video { object-position: 50% center; } .hero__mask::after { background: linear-gradient(0deg, #010f2b99, transparent); } .hero__content p br { display: none; } }
 @media (max-width: 480px) {
@@ -37,6 +37,6 @@
   .scene-static .hero__mask { border-radius: 20px; }
   .scene-static .hero__content { left: 16px; right: 16px; bottom: 20px; }
   .scene-static .hero h1 { font-size: clamp(28px, 7vw, 42px); }
-  .scene-static .hero__content p { font-size: clamp(13px, 3.5vw, 16px); margin: 12px 0 20px; }
-  .scene-static .hero__content .button { padding: 14px 24px; font-size: 15px; }
+  .scene-static .hero__content p { font-size: clamp(14px, 3.5vw, 18px); margin: 12px 0 20px; }
+  .scene-static .hero__content .button { padding: 15px 26px; font-size: 16px; }
 }
