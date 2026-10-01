@@ -93,7 +93,7 @@ export default function PortafolioWeb() {
                   <div className="pw-card__tags">
                     {site.tags.map(tag => <span key={tag}>{tag}</span>)}
                   </div>
-                  <a className="pw-card__cta" href={site.url} target="_blank" rel="noreferrer">Visitar sitio <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/solid/arrow-up-right-from-square.svg" alt="" aria-hidden="true" /></a>
+                  <a className="pw-card__cta" href={site.url} target="_blank" rel="noreferrer">Visitar sitio <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/solid/arrow-trend-up.svg" alt="" aria-hidden="true" /></a>
                 </div>
               </article>
             ))}

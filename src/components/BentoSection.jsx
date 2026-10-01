@@ -45,7 +45,7 @@ function CardAction({ action }) {
   const className = 'zt-bento__cta';
   if (action.to) return <Link className={className} to={action.to}>{action.label}<img src={`${ICON_CDN}arrow-right.svg`} alt="" aria-hidden="true" /></Link>;
   const external = action.href.startsWith('http');
-  return <a className={className} href={action.href} target={external ? '_blank' : undefined} rel={external ? 'noreferrer' : undefined}>{action.label}{external ? <img src={`${ICON_CDN}arrow-up-right-from-square.svg`} alt="" aria-hidden="true" /> : <img src={`${ICON_CDN}arrow-down.svg`} alt="" aria-hidden="true" />}</a>;
+  return <a className={className} href={action.href} target={external ? '_blank' : undefined} rel={external ? 'noreferrer' : undefined}>{action.label}{external ? <img src={`${ICON_CDN}arrow-trend-up.svg`} alt="" aria-hidden="true" /> : <img src={`${ICON_CDN}arrow-down.svg`} alt="" aria-hidden="true" />}</a>;
 }
 
 function Mockup({ card }) {
@@ -68,7 +68,7 @@ function Mockup({ card }) {
       <div className="zt-preview-stages"><span>Objetivo</span><span>Creatividad</span><span>Difusión</span></div>
     </div>}
     {card.preview === 'career' && <div className="zt-preview-career">
-      {card.tags.map((tag, index) => <div key={tag}><span>{index === 2 ? <svg viewBox="0 0 512 512" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg> : ['</>', '⌘'][index]}</span><div><b>{tag}</b><div className="zt-preview-lines"><i /><i /></div></div></div>)}
+      {card.tags.map((tag, index) => <div key={tag}><span>{index === 2 ? <svg viewBox="0 0 576 512" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M384 160c-17.7 0-32-14.3-32-32s14.3-32 32-32H544c17.7 0 32 14.3 32 32V288c0 17.7-14.3 32-32 32s-32-14.3-32-32V205.3L342.6 374.6c-12.5 12.5-32.8 12.5-45.3 0L192 269.3 54.6 406.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160c12.5-12.5 32.8-12.5 45.3 0L320 306.7 466.7 160H384z"/></svg> : ['</>', '⌘'][index]}</span><div><b>{tag}</b><div className="zt-preview-lines"><i /><i /></div></div></div>)}
     </div>}
     <div className="zt-preview-tags">{card.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
   </div>;
