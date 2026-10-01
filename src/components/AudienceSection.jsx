@@ -9,7 +9,7 @@ const services = [
   'Soporte TI empresarial',
   'Chatbots',
   'Redes sociales',
-  'Mantenimiento PC',
+  'Mantenimiento de cómputo',
   'Webservices',
   'Capacitaciones',
   'Invitaciones',

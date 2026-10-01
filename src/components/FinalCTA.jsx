@@ -15,7 +15,7 @@ export default function FinalCTA() {
       <p className="final-cta__terms">Empieza con lo que necesitas hoy.<br />Nosotros te ayudamos a crecer después.</p>
     </div>
     <footer className="footer">
-      <p>Sitios web · Software · Automatización<br />Tijuana, Baja California</p>
+      <p>Sitios web · Invitaciones digitales · Mantenimiento de cómputo<br />Tijuana, Baja California</p>
       <a href="#top" className="footer__logo" aria-label="Zorro Tech, volver al inicio"><Brand /></a>
       <p><a href="https://wa.me/526645495385" target="_blank" rel="noreferrer">WhatsApp</a> · <span aria-disabled="true">Instagram</span> · <span aria-disabled="true">Facebook</span></p>
     </footer>

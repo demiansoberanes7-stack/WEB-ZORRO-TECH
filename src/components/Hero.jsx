@@ -16,7 +16,7 @@ export default function Hero({ onPreorder }) {
         <video className="hero__video" src={HERO_VIDEO} autoPlay muted playsInline loop preload="metadata" aria-hidden="true" />
         <motion.div className="hero__content" style={scene.enabled ? { opacity } : {}}>
           <h1>Facilitamos tus procesos tecnológicos</h1>
-          <p>Sitios web, mantenimiento de cómputo y herramientas digitales<br /> para pequeños negocios.</p>
+          <p>Sitios web, invitaciones digitales y mantenimiento de equipo de cómputo<br /> para pequeños negocios.</p>
           <button className="button" onClick={onPreorder}>Quiero empezar</button>
           <p className="hero__subtitle">Tijuana · Soluciones accesibles · Sin complicaciones</p>
         </motion.div>
