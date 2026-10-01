@@ -1,0 +1,18 @@
+html { scroll-padding-top: 12px; }
+body { overflow-x: clip; }
+button, input { font: inherit; }
+button { cursor: pointer; border: 0; background: transparent; color: inherit; }
+button:focus-visible, a:focus-visible { outline: 3px solid #555; outline-offset: 5px; }
+.scroll-scene { position: relative; }
+.scene-pin { position: sticky; top: 0; height: 100svh; overflow: hidden; width: 100%; }
+.scene-static .scene-pin { position: relative; height: auto; overflow: visible; }
+.skip-link { position: fixed; left: 16px; top: -100px; background: white; padding: 14px; z-index: 1000; }
+.skip-link:focus { top: 16px; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+@media (max-width: 768px) {
+  .scene-static .scene-pin { height: auto !important; min-height: 0 !important; }
+}
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }

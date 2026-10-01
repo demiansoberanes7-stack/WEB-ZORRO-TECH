@@ -1,0 +1,98 @@
+:root {
+  --color-white: #FFFEFC;
+  --color-white-10: rgba(255, 254, 252, 0.1);
+  --color-dark-blue: #111111;
+  --color-blue: #111111;
+
+  --font-primary: 'Figtree', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-white);
+  color: var(--color-dark-blue);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Utilities */
+.text--white { color: var(--color-white); }
+.text--dark-blue { color: var(--color-dark-blue); }
+
+.fill--white { background-color: var(--color-white); }
+.fill--white-10 { background-color: var(--color-white-10); }
+
+/* Typography */
+h1 {
+  font-size: clamp(3rem, 5vw + 1rem, 5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw + 1rem, 4rem);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw + 1rem, 2.5rem);
+  font-weight: 500;
+}
+
+.mosaic-wrap {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Section */
+.section {
+  width: 100%;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Base button styles */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 100px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: var(--font-primary);
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+}

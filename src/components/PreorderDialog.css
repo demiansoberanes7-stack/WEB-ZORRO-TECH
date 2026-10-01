@@ -1,0 +1,14 @@
+.preorder-dialog { position: fixed; inset: 0; margin: auto; border: 0; border-radius: 28px; width: min(850px, 92vw); max-height: 90svh; padding: 0; color: var(--color-dark-blue); background: var(--color-white); }
+.preorder-dialog::backdrop { background: #010f2b80; backdrop-filter: blur(8px); }
+.preorder-dialog__content { position: relative; display: grid; grid-template-columns: 1fr 1fr; padding: 20px; gap: 24px; }
+.preorder-dialog__content > img { width: 100%; height: 100%; object-fit: cover; border-radius: 20px; }
+.preorder-dialog__close { position: absolute; right: 14px; top: 8px; font-size: 36px; }
+.preorder-dialog form { display: grid; gap: 20px; padding: 24px 8px; }
+.preorder-dialog h2 { font-size: 32px; }
+.preorder-dialog p { color: #626272; }
+.preorder-dialog label { display: grid; gap: 8px; }
+.preorder-dialog input { padding: 12px 14px; border: 1px solid #bbb; border-radius: 10px; width: 100%; background: white; }
+.preorder-dialog .button { background: var(--color-blue); color: white; }
+.preorder-dialog button:disabled { opacity: .5; }
+body:has(dialog[open]) { overflow: hidden; }
+@media (max-width: 600px) { .preorder-dialog__content { grid-template-columns: 1fr; } .preorder-dialog__content > img { height: 150px; } }
