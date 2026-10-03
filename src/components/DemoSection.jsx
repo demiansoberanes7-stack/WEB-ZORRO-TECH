@@ -23,6 +23,6 @@ export default function DemoSection() {
       </Reveal>
       {requested && !demoVideo && <p className="zt-demo__notice" role="status">El video estará disponible próximamente. Mientras tanto, <a href="#portafolio">conoce nuestro portafolio</a>.</p>}
     </div>
-    <a className="zt-whatsapp" href={whatsappUrl} target="_blank" rel="noreferrer" aria-label="Hablar por WhatsApp">{supportLabel}</a>
+    <a className="zt-whatsapp" href={whatsappUrl} target="_blank" rel="noopener noreferrer" aria-label="Hablar por WhatsApp">{supportLabel}</a>
   </section>;
 }

@@ -83,7 +83,7 @@ export default function PortafolioWeb() {
           <div className="pw-grid">
             {sites.map(site => (
               <article className="pw-card" key={site.url}>
-                <a className="pw-card__shot" href={site.url} target="_blank" rel="noreferrer" aria-label={`Abrir ${site.title}`}>
+                <a className="pw-card__shot" href={site.url} target="_blank" rel="noopener noreferrer" aria-label={`Abrir ${site.title}`}>
                   <img src={site.image} alt={`Vista previa de ${site.title}`} loading="lazy" />
                 </a>
                 <div className="pw-card__body">
@@ -93,7 +93,7 @@ export default function PortafolioWeb() {
                   <div className="pw-card__tags">
                     {site.tags.map(tag => <span key={tag}>{tag}</span>)}
                   </div>
-                  <a className="pw-card__cta" href={site.url} target="_blank" rel="noreferrer">Visitar sitio <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/solid/arrow-trend-up.svg" alt="" aria-hidden="true" /></a>
+                  <a className="pw-card__cta" href={site.url} target="_blank" rel="noopener noreferrer">Visitar sitio <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/solid/arrow-trend-up.svg" alt="" aria-hidden="true" /></a>
                 </div>
               </article>
             ))}
@@ -104,7 +104,7 @@ export default function PortafolioWeb() {
       <section className="pw-cta">
         <div className="pw-container pw-cta__inner">
           <h2>¿Quieres uno para tu negocio?</h2>
-          <a className="lm-btn lm-btn--light" href={WHATSAPP} target="_blank" rel="noreferrer">Escríbenos por WhatsApp</a>
+          <a className="lm-btn lm-btn--light" href={WHATSAPP} target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp</a>
         </div>
       </section>
 
@@ -113,7 +113,7 @@ export default function PortafolioWeb() {
         <div className="lm-footer__links">
           <Link to="/">Inicio</Link>
           <Link to="/contenido-multimedia">Contenido multimedia</Link>
-          <a href={WHATSAPP} target="_blank" rel="noreferrer">WhatsApp</a>
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">WhatsApp</a>
         </div>
       </footer>
     </div>

@@ -25,7 +25,7 @@ export default function Blog() {
               en unos días.
             </p>
             <div className="lm-hero__buttons">
-              <a href={WHATSAPP} target="_blank" rel="noreferrer" className="lm-btn lm-btn--light">Avísame cuando esté listo</a>
+              <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="lm-btn lm-btn--light">Avísame cuando esté listo</a>
             </div>
           </div>
           <div className="lm-hero__image-wrapper lm-fade-left">
@@ -39,7 +39,7 @@ export default function Blog() {
         <div className="lm-footer__links">
           <Link to="/">Inicio</Link>
           <Link to="/portafolio-web">Portafolio web</Link>
-          <a href={WHATSAPP} target="_blank" rel="noreferrer">WhatsApp</a>
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">WhatsApp</a>
         </div>
       </footer>
     </div>

@@ -36,7 +36,7 @@ const cards = [
     title: 'Trayectoria Laboral', icon: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/solid/briefcase.svg', gradient: 'blue', wide: true, preview: 'career',
     text: 'Conoce el perfil detrás de Zorro Tech y las áreas que conectamos para ayudarte: desarrollo web, soporte técnico y comunicación digital.',
     tags: ['Desarrollo web', 'Soporte TI', 'Marketing digital'],
-    action: { label: 'Descargar CV (PDF)', href: '/docs/CV_Axel_Demian_Soberanes_ATS_Espanol.pdf' },
+    action: { label: 'Descargar CV (PDF)', href: '/assets/docs/CV_Axel_Demian_Soberanes_ATS_Espanol.pdf' },
   },
 ];
 

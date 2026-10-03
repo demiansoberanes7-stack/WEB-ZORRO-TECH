@@ -25,11 +25,11 @@ export default function ContenidoMultimedia() {
               estrategia que aplicamos en cada proyecto.
             </p>
             <div className="lm-hero__buttons">
-              <a href={WHATSAPP} target="_blank" rel="noreferrer" className="lm-btn lm-btn--light">Escríbenos por WhatsApp</a>
+              <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="lm-btn lm-btn--light">Escríbenos por WhatsApp</a>
             </div>
           </div>
           <div className="lm-hero__image-wrapper lm-fade-left">
-            <img src="/portafolio-multimedia/hero.png" alt="Kit de herramientas digitales" className="lm-hero__image" loading="eager" />
+            <img src="/assets/portafolio-multimedia/hero.png" alt="Kit de herramientas digitales" className="lm-hero__image" loading="eager" />
           </div>
         </div>
       </section>
@@ -44,7 +44,7 @@ export default function ContenidoMultimedia() {
             </p>
           </div>
           <div className="lm-video-wrapper">
-            <video src="/portafolio-multimedia/media/6a3704c26a6dd1b69a5da628.mp4" autoPlay loop muted playsInline className="lm-showcase-video" />
+            <video src="/assets/portafolio-multimedia/media/6a3704c26a6dd1b69a5da628.mp4" autoPlay loop muted playsInline className="lm-showcase-video" />
           </div>
         </div>
       </section>
@@ -58,7 +58,7 @@ export default function ContenidoMultimedia() {
             </p>
           </div>
           <div className="lm-video-wrapper lm-video-wrapper--ltr">
-            <video src="/portafolio-multimedia/video-estrategias.mp4" autoPlay loop muted playsInline className="lm-showcase-video lm-showcase-video--large" />
+            <video src="/assets/portafolio-multimedia/video-estrategias.mp4" autoPlay loop muted playsInline className="lm-showcase-video lm-showcase-video--large" />
           </div>
         </div>
       </section>
@@ -95,7 +95,7 @@ export default function ContenidoMultimedia() {
         <div className="lm-footer__links">
           <Link to="/">Inicio</Link>
           <Link to="/portafolio-web">Portafolio web</Link>
-          <a href={WHATSAPP} target="_blank" rel="noreferrer">WhatsApp</a>
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">WhatsApp</a>
         </div>
       </footer>
     </div>
