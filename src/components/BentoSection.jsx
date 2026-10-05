@@ -81,7 +81,12 @@ export default function BentoSection() {
         <h2 className="zt-visually-hidden" id="bento-heading">Conoce nuestro portafolio</h2>
       </Reveal>
       <div className="zt-bento">
-        {cards.map(card => <Reveal key={card.title} className={`zt-bento__card zt-bento__card--${card.gradient}${card.flip ? ' zt-bento__card--flip' : ''}${card.wide ? ' zt-bento__card--wide' : ''}`}>
+        {cards.map((card, i) => <Reveal
+          key={card.title}
+          delay={i * 0.08}
+          direction={card.flip ? 'right' : 'left'}
+          className={`zt-bento__card zt-bento__card--${card.gradient}${card.flip ? ' zt-bento__card--flip' : ''}${card.wide ? ' zt-bento__card--wide' : ''}`}
+        >
           <div className="zt-bento__copy">
             <div className="zt-bento__head">
               <span className="zt-bento__icon zt-bento__glyph" aria-hidden="true"><img src={card.icon} alt="" /></span>

@@ -49,7 +49,7 @@ function Doodle({ index }) {
 export default function AudienceSection() {
   return <section className="zt-dark zt-audience-section" id="para-quien" aria-labelledby="audience-heading">
     <div className="zt-trusted">
-      <p>Conoce todos nuestros servicios</p>
+      <Reveal direction="up"><p>Conoce todos nuestros servicios</p></Reveal>
       <div className="zt-marquee">
         <div className="zt-marquee__track">
           {[0, 1].map(copy => <div className="zt-marquee__group" key={copy} aria-hidden={copy === 1 ? true : undefined}>
@@ -61,11 +61,11 @@ export default function AudienceSection() {
     <div className="zt-container">
       <Reveal><h2 className="zt-heading" id="audience-heading">¿Para quién es Zorro Tech?</h2></Reveal>
       <div className="zt-audience">
-        {audiences.map((audience, index) => <Reveal className="zt-audience__card" key={audience.title}>
+        {audiences.map((audience, index) => <Reveal className="zt-audience__card" key={audience.title} delay={index * 0.12} direction="up">
           <Doodle index={index} /><h3>{audience.title}</h3><p>{audience.text}</p>
         </Reveal>)}
       </div>
-      <Reveal><p className="zt-audience__hint">Encuentra el perfil con el que más te identificas</p></Reveal>
+      <Reveal delay={0.2}><p className="zt-audience__hint">Encuentra el perfil con el que más te identificas</p></Reveal>
     </div>
   </section>;
 }
