@@ -12,6 +12,7 @@ import PreorderDialog from './components/PreorderDialog';
 import ContenidoMultimedia from './pages/ContenidoMultimedia';
 import PortafolioWeb from './pages/PortafolioWeb';
 import Blog from './pages/Blog';
+import TarjetaDigital from './pages/TarjetaDigital';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -47,6 +48,9 @@ function App() {
         <Route path="/contenido-multimedia" element={<ContenidoMultimedia />} />
         <Route path="/portafolio-web" element={<PortafolioWeb />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/card.html" element={<TarjetaDigital />} />
+        <Route path="/card" element={<TarjetaDigital />} />
+        <Route path="/tarjeta" element={<TarjetaDigital />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <PreorderDialog open={preorder} onClose={() => setPreorder(false)} />
