@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Axel Soberanes · Zorro Tech</title>
+  <meta name="description" content="Tarjeta de presentación digital de Axel Soberanes, Encargado de Operaciones en Zorro Tech. Sitios web, software y mantenimiento de cómputo en Tijuana." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --white:        #FFFEFC;
+      --dark:         #111111;
+      --dark-60:      rgba(17, 17, 17, 0.6);
+      --dark-30:      rgba(17, 17, 17, 0.3);
+      --dark-08:      rgba(17, 17, 17, 0.08);
+      --dark-04:      rgba(17, 17, 17, 0.04);
+      --btn-grad:     linear-gradient(135deg, #ff6b2b 0%, #e65100 55%, #111111 100%);
+      --radius-card:  28px;
+      --radius-btn:   100px;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Figtree', sans-serif;
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100dvh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow: hidden;
+    }
+
+    /* ── Warm orange pastel orbs ─── */
+    .bg-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.55;
+      animation: drift 14s ease-in-out infinite alternate;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .bg-orb--1 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, #fed7aa 0%, transparent 70%);
+      top: -180px; left: -150px;
+      animation-duration: 16s;
+    }
+    .bg-orb--2 {
+      width: 440px; height: 440px;
+      background: radial-gradient(circle, #fef3c7 0%, transparent 70%);
+      bottom: -120px; right: -100px;
+      animation-duration: 12s;
+      animation-delay: -5s;
+    }
+    .bg-orb--3 {
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, #ffedd5 0%, transparent 70%);
+      top: 50%; left: 58%;
+      animation-duration: 18s;
+      animation-delay: -9s;
+    }
+    @keyframes drift {
+      from { transform: translate(0, 0) scale(1); }
+      to   { transform: translate(36px, 26px) scale(1.06); }
+    }
+
+    /* ── Card ──────────────────────────────────────── */
+    .card-wrap {
+      position: relative;
+      z-index: 1;
+      padding: 20px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius-card);
+      padding: 42px 28px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow:
+        0 0 0 1px var(--dark-08),
+        0 4px 6px rgba(0,0,0,0.02),
+        0 16px 40px rgba(0,0,0,0.08),
+        0 40px 80px rgba(17,17,17,0.04);
+      animation: cardIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    /* Orange gradient top stripe */
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--btn-grad);
+      border-radius: var(--radius-card) var(--radius-card) 0 0;
+    }
+
+    @keyframes cardIn {
+      from { opacity: 0; transform: translateY(24px) scale(0.97); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* ── Avatar / Logo Profile ─────────────────────── */
+    .avatar-wrap {
+      position: relative;
+      width: 108px;
+      height: 108px;
+      margin-bottom: 20px;
+    }
+
+    .avatar-ring {
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      background: var(--btn-grad);
+      animation: spin 5s linear infinite;
+      z-index: 0;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .avatar-ring::after {
+      content: '';
+      position: absolute;
+      inset: 3px;
+      border-radius: 50%;
+      background: var(--white);
+    }
+
+    .avatar {
+      position: relative;
+      z-index: 1;
+      width: 108px;
+      height: 108px;
+      border-radius: 50%;
+      object-fit: contain;
+      background: #ffffff;
+      padding: 6px;
+      display: block;
+      box-shadow: inset 0 0 0 1px var(--dark-08);
+    }
+
+    /* ── Name & role ───────────────────────────────── */
+    .name {
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--dark);
+      letter-spacing: -0.04em;
+      text-align: center;
+      line-height: 1.1;
+      margin-bottom: 5px;
+    }
+
+    .role {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--dark-60);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .tagline {
+      font-size: 0.875rem;
+      color: var(--dark-60);
+      text-align: center;
+      max-width: 280px;
+      line-height: 1.55;
+      margin-bottom: 26px;
+      font-weight: 400;
+    }
+
+    /* ── Divider ───────────────────────────────────── */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--dark-08) 30%, var(--dark-08) 70%, transparent);
+      margin-bottom: 22px;
+    }
+
+    /* ── Social links grid ─────────────────────────── */
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 9px;
+      width: 100%;
+    }
+
+    .link-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      padding: 14px 8px 12px;
+      border-radius: 16px;
+      background: var(--dark-04);
+      border: 1px solid var(--dark-08);
+      text-decoration: none;
+      font-family: 'Figtree', sans-serif;
+      font-size: 0.67rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--dark-60);
+      transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+      cursor: pointer;
+    }
+
+    .link-btn:hover {
+      transform: translateY(-4px) scale(1.04);
+      background: var(--white);
+      color: var(--dark);
+    }
+    .link-btn:active {
+      transform: translateY(0) scale(0.97);
+    }
+
+    /* Per-brand hover tints */
+    .link-btn--facebook:hover  { border-color: #1877F2; box-shadow: 0 8px 20px rgba(24,119,242,0.14); }
+    .link-btn--instagram:hover { border-color: #E1306C; box-shadow: 0 8px 20px rgba(225,48,108,0.14); }
+    .link-btn--tiktok:hover    { border-color: #010101; box-shadow: 0 8px 20px rgba(0,0,0,0.10); }
+    .link-btn--whatsapp:hover  { border-color: #25D366; box-shadow: 0 8px 20px rgba(37,211,102,0.14); }
+    .link-btn--web:hover       { border-color: #ff6b2b; box-shadow: 0 8px 20px rgba(255,107,43,0.18); }
+    .link-btn--email:hover     { border-color: #EA4335; box-shadow: 0 8px 20px rgba(234,67,53,0.14); }
+
+    /* Favicon icons */
+    .link-btn .icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 7px;
+      display: block;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    /* Custom branded icon chip for web */
+    .icon-chip {
+      width: 30px;
+      height: 30px;
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .icon-chip--web { background: var(--btn-grad); }
+    .icon-chip svg { width: 17px; height: 17px; }
+
+    /* ── Servicios button ──────────────────────────── */
+    .btn-servicios {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      margin-top: 16px;
+      padding: 18px 24px;
+      border-radius: var(--radius-btn);
+      background: var(--btn-grad);
+      color: var(--white);
+      font-family: 'Figtree', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      box-shadow:
+        0 4px 18px rgba(255, 107, 43, 0.35),
+        0 1px 3px rgba(17, 17, 17, 0.15);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    }
+
+    /* Subtle gloss */
+    .btn-servicios::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    .btn-servicios:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow:
+        0 12px 32px rgba(255, 107, 43, 0.45),
+        0 4px 8px rgba(17, 17, 17, 0.12);
+    }
+
+    .btn-servicios:active {
+      transform: translateY(0) scale(0.98);
+      opacity: 0.9;
+    }
+
+    .btn-servicios svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+
+    .btn-servicios:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* ── Bottom Brand Footer ────────────────────────── */
+    .footer-brand {
+      margin-top: 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--dark-60);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: opacity 0.2s ease;
+    }
+    .footer-brand:hover {
+      opacity: 0.8;
+    }
+    .footer-brand img {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      object-fit: contain;
+      background: #fff;
+    }
+    .footer-brand__name {
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    /* ── Responsive ────────────────────────────────── */
+    @media (max-width: 380px) {
+      .card { padding: 32px 18px 26px; }
+      .links-grid { gap: 8px; }
+      .link-btn { padding: 12px 6px 10px; font-size: 0.62rem; }
+      .name { font-size: 1.45rem; }
+      .btn-servicios { font-size: 0.95rem; padding: 16px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient background orbs -->
+  <div class="bg-orb bg-orb--1" aria-hidden="true"></div>
+  <div class="bg-orb bg-orb--2" aria-hidden="true"></div>
+  <div class="bg-orb bg-orb--3" aria-hidden="true"></div>
+
+  <div class="card-wrap">
+    <article class="card" role="main" aria-label="Tarjeta de presentación de Axel Soberanes, Zorro Tech">
+
+      <!-- Avatar / Logo Profile -->
+      <div class="avatar-wrap">
+        <div class="avatar-ring"></div>
+        <img class="avatar" src="assets/zorro-logo.jpg" alt="Logo Zorro Tech - Axel Soberanes" />
+      </div>
+
+      <!-- Name & role -->
+      <h1 class="name" id="card-name">Axel Soberanes</h1>
+      <p class="role">Encargado de Operaciones</p>
+      <p class="tagline">Sitios web, software y mantenimiento de cómputo para la optimización de tu operación...</p>
+
+      <div class="divider" aria-hidden="true"></div>
+
+      <!-- Social links — real favicons via Google CDN -->
+      <nav class="links-grid" aria-label="Redes sociales y contacto">
+
+        <!-- Facebook -->
+        <a id="btn-facebook" class="link-btn link-btn--facebook"
+           href="https://www.facebook.com/profile.php?id=61594649223468"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Visitar Facebook">
+          <img class="icon"
+               src="https://www.google.com/s2/favicons?domain=facebook.com&sz=64"
+               alt="" aria-hidden="true" />
+          <span>Facebook</span>
+        </a>
+
+        <!-- Instagram -->
+        <a id="btn-instagram" class="link-btn link-btn--instagram"
+           href="https://www.instagram.com/somoszorrotech/"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Visitar Instagram">
+          <img class="icon"
+               src="https://www.google.com/s2/favicons?domain=instagram.com&sz=64"
+               alt="" aria-hidden="true" />
+          <span>Instagram</span>
+        </a>
+
+        <!-- TikTok -->
+        <a id="btn-tiktok" class="link-btn link-btn--tiktok"
+           href="https://www.tiktok.com/@somoszorrotech"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Visitar TikTok">
+          <img class="icon"
+               src="https://www.google.com/s2/favicons?domain=tiktok.com&sz=64"
+               alt="" aria-hidden="true" />
+          <span>TikTok</span>
+        </a>
+
+        <!-- WhatsApp -->
+        <a id="btn-whatsapp" class="link-btn link-btn--whatsapp"
+           href="https://wa.me/526645495385"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Contactar por WhatsApp">
+          <img class="icon"
+               src="https://www.google.com/s2/favicons?domain=whatsapp.com&sz=64"
+               alt="" aria-hidden="true" />
+          <span>WhatsApp</span>
+        </a>
+
+        <!-- Sitio Web — icono branded -->
+        <a id="btn-web" class="link-btn link-btn--web"
+           href="https://zorrotech.online/"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Visitar sitio web">
+          <div class="icon-chip icon-chip--web" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20"/>
+            </svg>
+          </div>
+          <span>Sitio Web</span>
+        </a>
+
+        <!-- Email — Favicon de Google Mail -->
+        <a id="btn-email" class="link-btn link-btn--email"
+           href="mailto:axel_soberanes@zorrotech.online"
+           aria-label="Enviar correo electrónico">
+          <img class="icon"
+               src="https://www.google.com/s2/favicons?domain=gmail.com&sz=64"
+               alt="" aria-hidden="true" />
+          <span>Correo</span>
+        </a>
+
+      </nav>
+
+      <!-- Servicios button -->
+      <a id="btn-servicios" class="btn-servicios"
+         href="https://zorrotech.online/"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Ver nuestros servicios">
+        <span>Servicios</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+
+      <!-- Bottom Brand Footer -->
+      <a class="footer-brand" href="https://zorrotech.online/" target="_blank" rel="noopener noreferrer" aria-label="Zorro Tech — Tijuana, BC">
+        <img src="assets/zorro-logo.jpg" alt="Logo Zorro Tech" />
+        <span><strong class="footer-brand__name">Zorro Tech</strong> · Tijuana, BC</span>
+      </a>
+
+    </article>
+  </div>
+
+</body>
+</html>
