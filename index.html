@@ -1,39 +1,105 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-MX">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/jpeg" href="/assets/zorro-logo.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#FFFEFC" />
-    <meta name="description" content="Sitios web, invitaciones digitales y mantenimiento de equipo de cómputo para pequeños negocios en Tijuana." />
-    <title>Zorro Tech — Sitios web, invitaciones digitales y mantenimiento de cómputo</title>
+    <meta name="description" content="Sitios web, invitaciones digitales y mantenimiento de equipo de cómputo para pequeños negocios en Tijuana, Baja California, México." />
+    <title>Zorro Tech — Sitios web, invitaciones digitales y mantenimiento de cómputo en Tijuana</title>
 
-    <!-- SEO / redes sociales -->
+    <!-- ── Geo-targeting México ── -->
+    <meta name="geo.region"       content="MX-BCN" />
+    <meta name="geo.placename"    content="Tijuana, Baja California, México" />
+    <meta name="geo.position"     content="32.5027;-117.0037" />
+    <meta name="ICBM"             content="32.5027, -117.0037" />
+    <meta name="language"         content="Spanish" />
+    <meta name="content-language" content="es-MX" />
+
+    <!-- ── Hreflang ── -->
     <link rel="canonical" href="https://zorrotech.online/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="es_MX" />
-    <meta property="og:site_name" content="Zorro Tech" />
-    <meta property="og:title" content="Zorro Tech — Sitios web, invitaciones digitales y mantenimiento de cómputo" />
-    <meta property="og:description" content="Sitios web, invitaciones digitales y mantenimiento de equipo de cómputo para pequeños negocios en Tijuana." />
-    <meta property="og:url" content="https://zorrotech.online/" />
-    <meta property="og:image" content="https://zorrotech.online/assets/zorro-logo.jpg" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Zorro Tech — Sitios web, invitaciones digitales y mantenimiento de cómputo" />
-    <meta name="twitter:description" content="Sitios web, invitaciones digitales y mantenimiento de equipo de cómputo para pequeños negocios en Tijuana." />
-    <meta name="twitter:image" content="https://zorrotech.online/assets/zorro-logo.jpg" />
+    <link rel="alternate" href="https://zorrotech.online/" hreflang="es-MX" />
+    <link rel="alternate" href="https://zorrotech.online/" hreflang="es" />
+    <link rel="alternate" href="https://zorrotech.online/" hreflang="x-default" />
 
-    <!-- Fuentes (Figtree, Outfit e Inter) -->
+    <!-- ── Open Graph / Redes sociales ── -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:locale"      content="es_MX" />
+    <meta property="og:site_name"   content="Zorro Tech" />
+    <meta property="og:title"       content="Zorro Tech — Sitios web, invitaciones digitales y mantenimiento de cómputo en Tijuana" />
+    <meta property="og:description" content="Sitios web, invitaciones digitales y mantenimiento de equipo de cómputo para pequeños negocios en Tijuana, BC, México." />
+    <meta property="og:url"         content="https://zorrotech.online/" />
+    <meta property="og:image"       content="https://zorrotech.online/assets/zorro-logo.jpg" />
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content="Zorro Tech — Sitios web, invitaciones digitales y mantenimiento de cómputo en Tijuana" />
+    <meta name="twitter:description" content="Sitios web, invitaciones digitales y mantenimiento de equipo de cómputo para pequeños negocios en Tijuana, BC, México." />
+    <meta name="twitter:image"       content="https://zorrotech.online/assets/zorro-logo.jpg" />
+
+    <!-- ── Fuentes (Figtree, Outfit e Inter) ── -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Google Analytics (GA4) -->
+    <!-- ── Google Analytics (GA4) ── -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X72PGXDZXK"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-X72PGXDZXK');
+    </script>
+
+    <!-- ── Structured Data: LocalBusiness México ── -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Zorro Tech",
+      "description": "Sitios web, invitaciones digitales y mantenimiento de cómputo para pequeños negocios en Tijuana, Baja California, México.",
+      "url": "https://zorrotech.online/",
+      "logo": "https://zorrotech.online/assets/zorro-logo.jpg",
+      "image": "https://zorrotech.online/assets/zorro-logo.jpg",
+      "telephone": "+52-664-549-5385",
+      "email": "axel_soberanes@zorrotech.online",
+      "priceRange": "$$",
+      "currenciesAccepted": "MXN",
+      "paymentAccepted": "Efectivo, Transferencia bancaria",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tijuana",
+        "addressRegion": "Baja California",
+        "addressCountry": "MX",
+        "postalCode": "22000"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 32.5027,
+        "longitude": -117.0037
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tijuana"
+        },
+        {
+          "@type": "State",
+          "name": "Baja California"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61594649223468",
+        "https://www.instagram.com/somoszorrotech/",
+        "https://www.tiktok.com/@somoszorrotech"
+      ],
+      "openingHours": "Mo-Fr 09:00-18:00",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+52-664-549-5385",
+        "contactType": "customer service",
+        "areaServed": "MX",
+        "availableLanguage": "Spanish"
+      }
+    }
     </script>
   </head>
   <body>
