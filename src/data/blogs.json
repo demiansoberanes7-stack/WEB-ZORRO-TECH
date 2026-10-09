@@ -1,13 +1,5 @@
 [
   {
-    "id": "1791522523143",
-    "title": "MEJORES BLOGS",
-    "description": "ESTOS SON LOS MEJORES BLOGS",
-    "content": "Entendido. Me estás mostrando que el banner actual en servicios.html tiene contenido real: el título \"MANTENIMIENTO DE PC'S Y LAPTOPS\", el precio \"$350.00 MXN\", el texto \"PREGUNTA POR EL SERVICIO A DOMICILIO\" y la mascota zorro. Déjame ver la sección del hero en el HTML para actualizarlo correctamente.\n\nAhora veo que el hero está vacío (sin contenido). Voy a replicar fielmente el banner de la imagen: título en arco, precio en caja naranja, texto de domicilio y mascota zorro.",
-    "coverUrl": "https://raw.githubusercontent.com/demiansoberanes7-stack/WEB-ZORRO-TECH/main/public/assets/blogs/blog-1791522520572.png",
-    "date": "2026-10-09"
-  },
-  {
     "id": "1791523047169",
     "title": "DIOS BENDIGA EL FOMO",
     "description": "Que es el FOMO y por que le tenemos mas miedo que el coco.",
