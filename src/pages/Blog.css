@@ -210,6 +210,45 @@
   margin-bottom: 40px;
 }
 
+/* Estilos para el Markdown */
+.blog-post-description h1,
+.blog-post-description h2,
+.blog-post-description h3,
+.blog-post-description h4 {
+  color: #111;
+  font-weight: 800;
+  margin-top: 2.5em;
+  margin-bottom: 0.8em;
+  letter-spacing: -0.01em;
+}
+
+.blog-post-description h2 {
+  font-size: 2rem;
+}
+
+.blog-post-description h3 {
+  font-size: 1.5rem;
+}
+
+.blog-post-description p {
+  margin-bottom: 1.5em;
+}
+
+.blog-post-description strong {
+  font-weight: 800;
+  color: #000;
+}
+
+.blog-post-description ul,
+.blog-post-description ol {
+  margin-bottom: 1.5em;
+  padding-left: 1.5em;
+}
+
+.blog-post-description li {
+  margin-bottom: 0.5em;
+}
+
 /* ==============================
    RESPONSIVE
 ============================== */

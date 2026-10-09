@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
 import './ContenidoMultimedia.css';
 import './Blog.css';
 
@@ -65,9 +66,11 @@ export default function BlogPost() {
         </div>
 
         <div className="blog-post-content lm-container">
-          <p className="blog-post-description" style={{ whiteSpace: 'pre-wrap' }}>
-            {blog.content || blog.description}
-          </p>
+          <div className="blog-post-description">
+            <ReactMarkdown>
+              {blog.content || blog.description}
+            </ReactMarkdown>
+          </div>
         </div>
       </article>
 
