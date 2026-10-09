@@ -33,7 +33,7 @@ const cards = [
     action: { label: 'Platiquemos de tu negocio', href: `https://wa.me/526645495385?text=${CAMPANAS_MSG}` },
   },
   {
-    title: 'Alguien que te escucha', icon: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/solid/briefcase.svg', gradient: 'blue', wide: true, preview: 'career',
+    title: 'La cara detrás del trabajo', icon: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/solid/briefcase.svg', gradient: 'blue', wide: true, preview: 'career',
     text: 'Soy Axel Demian. Mi objetivo es escucharte, entender qué necesitas (ya sea reparar tu equipo o hacer una campaña) y acompañarte para que la tecnología sea tu aliada, no un dolor de cabeza.',
     tags: ['Desarrollo web', 'Soporte TI', 'Marketing digital'],
     action: { label: 'Descargar Trayectoria (PDF)', href: '/assets/docs/CV_Axel_Demian_Soberanes_ATS_Espanol.pdf' },

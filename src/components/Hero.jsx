@@ -16,8 +16,8 @@ export default function Hero() {
         <video className="hero__video" src={HERO_VIDEO} autoPlay muted playsInline loop preload="metadata" aria-hidden="true" />
         <motion.div className="hero__content" style={scene.enabled ? { opacity } : {}}>
           <h1>Demos juntos el siguiente paso</h1>
-          <p>Entender la tecnología, el marketing o el mantenimiento de tu equipo no tiene que ser complicado. Te acompañamos paso a paso para encontrar la solución que realmente necesitas, sin estrés ni tecnicismos.</p>
-          <a className="button" href="https://wa.me/526645495385?text=Hola%2C%20estoy%20visitando%20la%20p%C3%A1gina.%20Me%20gustar%C3%ADa%20platicar%20sobre%20mi%20negocio." target="_blank" rel="noopener noreferrer">¿En qué etapa está tu negocio hoy?</a>
+          <p>Entender la tecnología, el marketing o el mantenimiento de tu equipo no tiene que ser complicado. Te acompañamos paso a paso para encontrar la solución que realmente necesitas.</p>
+          <a className="button" href="https://wa.me/526645495385?text=Hola%2C%20estoy%20visitando%20la%20p%C3%A1gina.%20Me%20gustar%C3%ADa%20recibir%20asesoramiento%20gratuito." target="_blank" rel="noopener noreferrer">Asesoramiento gratuito</a>
           <p className="hero__subtitle">Tijuana · Te hablamos claro · Acompañamiento en cada paso</p>
         </motion.div>
       </motion.div>
