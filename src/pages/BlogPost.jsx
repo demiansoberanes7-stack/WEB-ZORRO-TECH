@@ -106,6 +106,7 @@ export default function BlogPost() {
                 h3: ({node, ...props}) => <MotionText tag="h3" {...props} />,
                 ul: ({node, ...props}) => <MotionText tag="ul" {...props} />,
                 ol: ({node, ...props}) => <MotionText tag="ol" {...props} />,
+                img: ({node, ...props}) => <MotionText tag="img" {...props} />,
               }}
             >
               {blog.content || blog.description}

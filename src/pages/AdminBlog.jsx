@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Octokit } from '@octokit/rest';
 import './AdminBlog.css';
@@ -13,6 +13,8 @@ export default function AdminBlog() {
   const [isEditing, setIsEditing] = useState(false);
   const [token, setToken] = useState(localStorage.getItem('github_pat') || '');
   const [isLoading, setIsLoading] = useState(false);
+  const [isUploadingContentImg, setIsUploadingContentImg] = useState(false);
+  const contentRef = useRef(null);
   const [fileSha, setFileSha] = useState('');
   const [message, setMessage] = useState('');
   
@@ -124,6 +126,30 @@ export default function AdminBlog() {
       };
       reader.readAsDataURL(file);
     });
+  };
+
+  const handleInsertImageToContent = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    setIsUploadingContentImg(true);
+    setMessage('Subiendo imagen al contenido...');
+    try {
+      const rawUrl = await uploadImageToGitHub(file);
+      const cursorPosition = contentRef.current ? contentRef.current.selectionStart : formData.content.length;
+      const textBefore = formData.content.substring(0, cursorPosition);
+      const textAfter = formData.content.substring(cursorPosition);
+      const imageMarkdown = `\n\n![Imagen del artículo](${rawUrl})\n\n`;
+      setFormData({ ...formData, content: textBefore + imageMarkdown + textAfter });
+      setMessage('Imagen insertada en el contenido con éxito.');
+      setTimeout(() => setMessage(''), 3000);
+    } catch (error) {
+      alert("Error al subir imagen al contenido.");
+      setMessage('');
+    } finally {
+      setIsUploadingContentImg(false);
+      // reset file input
+      e.target.value = null;
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -250,15 +276,23 @@ export default function AdminBlog() {
             </div>
 
             <div className="form-group">
-              <label>Contenido completo del artículo</label>
+              <label style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <span>Contenido completo del artículo</span>
+                <label className="admin-btn-cancel" style={{ cursor: 'pointer', padding: '5px 10px', fontSize: '0.9rem', margin: 0, opacity: isUploadingContentImg ? 0.5 : 1 }}>
+                  {isUploadingContentImg ? 'Subiendo...' : '📸 Insertar Imagen Aquí'}
+                  <input type="file" accept="image/*" style={{ display: 'none' }} onChange={handleInsertImageToContent} disabled={isUploadingContentImg || isLoading} />
+                </label>
+              </label>
               <textarea 
                 name="content" 
+                ref={contentRef}
                 value={formData.content} 
                 onChange={handleInputChange} 
-                placeholder="Escribe todo el contenido de tu artículo aquí..."
-                rows="8"
+                placeholder="Escribe todo el contenido de tu artículo aquí... Puedes usar el botón de arriba para insertar imágenes en cualquier parte del texto."
+                rows="10"
                 disabled={isLoading}
               ></textarea>
+              <small style={{ color: '#666', marginTop: '5px', display: 'block' }}>Tip: Pon tu cursor donde quieras la imagen y dale clic al botón "Insertar Imagen Aquí".</small>
             </div>
 
             <div className="form-group">
