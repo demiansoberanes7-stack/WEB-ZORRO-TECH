@@ -21,7 +21,7 @@ export default function DemoSection() {
         <Reveal className="zt-demo__shell" direction="scale" delay={0.2}>
           <div className="zt-demo__glow" aria-hidden="true" />
           <Link to="/blog" className="zt-demo__box" style={{ display: 'block' }}>
-            <img className="zt-demo__poster" src="/assets/blogs/blog-1791528376418.png" alt="Ir al blog de Zorro Tech" width="2000" height="1125" />
+            <img className="zt-demo__poster" src="/assets/blogs/blog-1791528386972.png" alt="Ir al blog de Zorro Tech" width="2000" height="1125" />
           </Link>
         </Reveal>
       </div>
