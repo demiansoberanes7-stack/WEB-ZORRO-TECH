@@ -166,8 +166,6 @@
   letter-spacing: 0.05em;
   display: block;
   margin-bottom: 12px;
-  animation: smoothFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
-  animation-delay: 0.1s;
 }
 
 .blog-post-title {
@@ -177,8 +175,6 @@
   margin: 0;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  animation: smoothFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
-  animation-delay: 0.2s;
 }
 
 .blog-post-cover-wrapper {
@@ -195,8 +191,6 @@
   object-position: center;
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-  animation: smoothFadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
-  animation-delay: 0.3s;
 }
 
 .blog-post-content {
@@ -216,30 +210,9 @@
   margin-bottom: 40px;
 }
 
-/* Efectos de Motion Graphics (Fade Up escalonado) */
-@keyframes smoothFadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.blog-post-description > * {
-  animation: smoothFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.blog-post-description > *:nth-child(1) { animation-delay: 0.1s; }
-.blog-post-description > *:nth-child(2) { animation-delay: 0.2s; }
-.blog-post-description > *:nth-child(3) { animation-delay: 0.3s; }
-.blog-post-description > *:nth-child(4) { animation-delay: 0.4s; }
-.blog-post-description > *:nth-child(5) { animation-delay: 0.5s; }
-.blog-post-description > *:nth-child(n+6) { animation-delay: 0.6s; }
-
-/* Estilos para el Markdown */
+/* ==============================
+   ESTILOS PARA EL MARKDOWN
+============================== */
 .blog-post-description h1,
 .blog-post-description h2,
 .blog-post-description h3,

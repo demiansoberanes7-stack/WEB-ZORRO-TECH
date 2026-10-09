@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
+import { motion } from 'framer-motion';
 import './ContenidoMultimedia.css';
 import './Blog.css';
 
@@ -46,6 +47,21 @@ export default function BlogPost() {
     );
   }
 
+  // Componentes animados para el contenido Markdown
+  const MotionText = ({ children, tag: Tag = 'p' }) => {
+    const MotionTag = motion[Tag];
+    return (
+      <MotionTag
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-40px" }}
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      >
+        {children}
+      </MotionTag>
+    );
+  };
+
   return (
     <div className="lm-page">
       <header className="lm-topbar">
@@ -56,18 +72,42 @@ export default function BlogPost() {
       <article className="blog-post-article">
         <div className="blog-post-header">
           <div className="lm-container">
-            <span className="blog-date">{blog.date}</span>
-            <h1 className="blog-post-title">{blog.title}</h1>
+            <motion.span 
+              className="blog-date"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1, duration: 0.8 }}
+            >{blog.date}</motion.span>
+            <motion.h1 
+              className="blog-post-title"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+            >{blog.title}</motion.h1>
           </div>
         </div>
 
-        <div className="blog-post-cover-wrapper lm-container">
+        <motion.div 
+          className="blog-post-cover-wrapper lm-container"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 1 }}
+        >
           <img src={blog.coverUrl} alt={blog.title} className="blog-post-cover" onError={(e) => e.target.src = '/assets/zorro-logo.jpg'} />
-        </div>
+        </motion.div>
 
         <div className="blog-post-content lm-container">
           <div className="blog-post-description">
-            <ReactMarkdown>
+            <ReactMarkdown
+              components={{
+                p: ({node, ...props}) => <MotionText tag="p" {...props} />,
+                h1: ({node, ...props}) => <MotionText tag="h1" {...props} />,
+                h2: ({node, ...props}) => <MotionText tag="h2" {...props} />,
+                h3: ({node, ...props}) => <MotionText tag="h3" {...props} />,
+                ul: ({node, ...props}) => <MotionText tag="ul" {...props} />,
+                ol: ({node, ...props}) => <MotionText tag="ol" {...props} />,
+              }}
+            >
               {blog.content || blog.description}
             </ReactMarkdown>
           </div>
