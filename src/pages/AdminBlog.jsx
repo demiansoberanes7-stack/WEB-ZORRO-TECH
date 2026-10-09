@@ -9,12 +9,10 @@ const FILE_PATH = 'src/data/blogs.json';
 
 export default function AdminBlog() {
   const [blogs, setBlogs] = useState([]);
-  const [formData, setFormData] = useState({ id: '', title: '', description: '', content: '', coverUrl: '' });
+  const [formData, setFormData] = useState({ id: '', title: '', description: '', content: '', coverUrl: '', tags: '' });
   const [isEditing, setIsEditing] = useState(false);
   const [token, setToken] = useState(localStorage.getItem('github_pat') || '');
   const [isLoading, setIsLoading] = useState(false);
-  const [isUploadingContentImg, setIsUploadingContentImg] = useState(false);
-  const contentRef = useRef(null);
   const [fileSha, setFileSha] = useState('');
   const [message, setMessage] = useState('');
   
@@ -128,30 +126,6 @@ export default function AdminBlog() {
     });
   };
 
-  const handleInsertImageToContent = async (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-    setIsUploadingContentImg(true);
-    setMessage('Subiendo imagen al contenido...');
-    try {
-      const rawUrl = await uploadImageToGitHub(file);
-      const cursorPosition = contentRef.current ? contentRef.current.selectionStart : formData.content.length;
-      const textBefore = formData.content.substring(0, cursorPosition);
-      const textAfter = formData.content.substring(cursorPosition);
-      const imageMarkdown = `\n\n![Imagen del artículo](${rawUrl})\n\n`;
-      setFormData({ ...formData, content: textBefore + imageMarkdown + textAfter });
-      setMessage('Imagen insertada en el contenido con éxito.');
-      setTimeout(() => setMessage(''), 3000);
-    } catch (error) {
-      alert("Error al subir imagen al contenido.");
-      setMessage('');
-    } finally {
-      setIsUploadingContentImg(false);
-      // reset file input
-      e.target.value = null;
-    }
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.title || !formData.description || !formData.content || (!formData.coverUrl && !imageFile)) {
@@ -190,14 +164,14 @@ export default function AdminBlog() {
       updatedBlogs = [...blogs, newBlog];
     }
     
-    setFormData({ id: '', title: '', description: '', content: '', coverUrl: '' });
+    setFormData({ id: '', title: '', description: '', content: '', coverUrl: '', tags: '' });
     setImageFile(null);
     setImagePreview('');
     saveToGitHub(updatedBlogs);
   };
 
   const handleEdit = (blog) => {
-    setFormData({ ...blog, content: blog.content || '' });
+    setFormData({ ...blog, content: blog.content || '', tags: blog.tags || '' });
     setImagePreview(blog.coverUrl);
     setImageFile(null);
     setIsEditing(true);
@@ -276,23 +250,27 @@ export default function AdminBlog() {
             </div>
 
             <div className="form-group">
-              <label style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span>Contenido completo del artículo</span>
-                <label className="admin-btn-cancel" style={{ cursor: 'pointer', padding: '5px 10px', fontSize: '0.9rem', margin: 0, opacity: isUploadingContentImg ? 0.5 : 1 }}>
-                  {isUploadingContentImg ? 'Subiendo...' : '📸 Insertar Imagen Aquí'}
-                  <input type="file" accept="image/*" style={{ display: 'none' }} onChange={handleInsertImageToContent} disabled={isUploadingContentImg || isLoading} />
-                </label>
-              </label>
+              <label>Contenido completo del artículo</label>
               <textarea 
                 name="content" 
-                ref={contentRef}
                 value={formData.content} 
                 onChange={handleInputChange} 
-                placeholder="Escribe todo el contenido de tu artículo aquí... Puedes usar el botón de arriba para insertar imágenes en cualquier parte del texto."
+                placeholder="Escribe todo el contenido de tu artículo aquí..."
                 rows="10"
                 disabled={isLoading}
               ></textarea>
-              <small style={{ color: '#666', marginTop: '5px', display: 'block' }}>Tip: Pon tu cursor donde quieras la imagen y dale clic al botón "Insertar Imagen Aquí".</small>
+            </div>
+
+            <div className="form-group">
+              <label>Etiquetas (separadas por coma)</label>
+              <input 
+                type="text" 
+                name="tags" 
+                value={formData.tags} 
+                onChange={handleInputChange} 
+                placeholder="Ej. Tecnología, Ventas, Marketing"
+                disabled={isLoading}
+              />
             </div>
 
             <div className="form-group">
@@ -343,7 +321,7 @@ export default function AdminBlog() {
                 {isLoading ? 'Guardando...' : (isEditing ? 'Actualizar en la Nube' : 'Publicar en la Nube')}
               </button>
               {isEditing && (
-                <button type="button" className="admin-btn-cancel" disabled={isLoading} onClick={() => { setIsEditing(false); setFormData({ id: '', title: '', description: '', coverUrl: '' }); }}>
+                <button type="button" className="admin-btn-cancel" disabled={isLoading} onClick={() => { setIsEditing(false); setFormData({ id: '', title: '', description: '', coverUrl: '', tags: '' }); }}>
                   Cancelar
                 </button>
               )}

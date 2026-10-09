@@ -63,8 +63,12 @@ export default function Blog() {
                     <p className="blog-card-date">{blog.date}</p>
                     <p className="blog-description">{blog.description}</p>
                     <div className="blog-tags">
-                      <span className="blog-tag">Tecnología</span>
-                      <span className="blog-tag">Zorro Tech</span>
+                      {blog.tags
+                        ? blog.tags.split(',').map(tag => (
+                            <span key={tag.trim()} className="blog-tag">{tag.trim()}</span>
+                          ))
+                        : <span className="blog-tag">Zorro Tech</span>
+                      }
                     </div>
                     <Link to={`/blog/${blog.id}`} className="blog-btn" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
                       Leer artículo 

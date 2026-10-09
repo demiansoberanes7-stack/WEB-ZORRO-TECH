@@ -84,6 +84,19 @@ export default function BlogPost() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >{blog.title}</motion.h1>
+            {blog.tags && (
+              <motion.div
+                className="blog-tags"
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.8 }}
+                style={{ marginTop: '16px' }}
+              >
+                {blog.tags.split(',').map(tag => (
+                  <span key={tag.trim()} className="blog-tag">{tag.trim()}</span>
+                ))}
+              </motion.div>
+            )}
           </div>
         </div>
 
