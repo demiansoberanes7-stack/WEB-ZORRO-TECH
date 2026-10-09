@@ -1,0 +1,158 @@
+.admin-page {
+  font-family: 'Figtree', sans-serif;
+  min-height: 100vh;
+  background-color: #f4f4f2;
+  color: #111;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #111;
+  color: #fff;
+}
+
+.admin-back {
+  color: #ff6b2b;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.admin-btn-export {
+  background: linear-gradient(135deg, #ff6b2b, #e65100);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.admin-btn-export:hover {
+  transform: scale(1.05);
+}
+
+.admin-content {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.admin-form-section, .admin-list-section {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  flex: 1;
+}
+
+.admin-form .form-group {
+  margin-bottom: 20px;
+}
+
+.admin-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.admin-form input, .admin-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+.preview-image img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.admin-btn-submit {
+  flex: 1;
+  background: #111;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.admin-btn-submit:hover {
+  background: #ff6b2b;
+}
+
+.admin-btn-cancel {
+  background: #eee;
+  color: #333;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.blogs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.blog-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+.blog-item-cover {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.blog-item-info {
+  flex: 1;
+}
+.blog-item-info h3 {
+  margin: 0 0 5px 0;
+  font-size: 1rem;
+}
+.blog-item-info p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.blog-item-actions button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 5px;
+}
+.btn-edit { color: #ff6b2b; }
+.btn-delete { color: #e60000; }
+
+@media (max-width: 768px) {
+  .admin-content {
+    flex-direction: column;
+    padding: 20px;
+  }
+}
