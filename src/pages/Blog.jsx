@@ -35,14 +35,14 @@ export default function Blog() {
       </header>
 
       <section className="blog-header-section">
-        <div className="lm-container">
-          <div className="lm-badge">BLOG DE ZORRO TECH</div>
-          <h1 className="lm-hero__title" style={{ marginTop: '15px' }}>
-            Ideas, consejos y<br />
+        <div className="blog-header-inner">
+          <span className="lm-badge">Blog · Zorro Tech</span>
+          <h1 className="lm-hero__title" style={{ marginTop: '20px', marginBottom: '16px' }}>
+            Ideas, consejos y{' '}
             <span className="lm-highlight">tecnología</span>
           </h1>
-          <p className="lm-hero__description" style={{ maxWidth: '600px', margin: '20px auto 0' }}>
-            Explora nuestros artículos sobre sitios web, herramientas digitales y estrategias para hacer crecer tu negocio en internet.
+          <p className="lm-hero__description" style={{ maxWidth: '520px', margin: '0 auto' }}>
+            Artículos sobre sitios web, herramientas digitales y estrategias para hacer crecer tu negocio en internet.
           </p>
         </div>
       </section>

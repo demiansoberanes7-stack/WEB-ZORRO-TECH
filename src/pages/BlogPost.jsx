@@ -68,13 +68,6 @@ export default function BlogPost() {
           <p className="blog-post-description" style={{ whiteSpace: 'pre-wrap' }}>
             {blog.content || blog.description}
           </p>
-          
-          <div className="blog-post-footer">
-            <p>¿Te interesó este tema? Hablemos de cómo aplicarlo a tu negocio.</p>
-            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="lm-btn lm-btn--dark">
-              Contactar por WhatsApp
-            </a>
-          </div>
         </div>
       </article>
 
