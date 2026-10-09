@@ -24,6 +24,12 @@ export default function DemoSection() {
             <img className="zt-demo__poster" src="/assets/blogs/blog-1791528386972.png" alt="Ir al blog de Zorro Tech" width="2000" height="1125" />
           </Link>
         </Reveal>
+
+        <Reveal direction="up" delay={0.1}>
+          <p className="zt-demo__notice" style={{ marginTop: '20px', cursor: 'pointer' }} onClick={() => window.location.href='/blog'}>
+            Haz clic en la imagen para leer el artículo completo 👆
+          </p>
+        </Reveal>
       </div>
 
       <a className="zt-whatsapp" href={whatsappUrl} target="_blank" rel="noopener noreferrer" aria-label="Hablar por WhatsApp">
