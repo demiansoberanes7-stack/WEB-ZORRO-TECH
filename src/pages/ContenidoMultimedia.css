@@ -1,10 +1,10 @@
 /* Réplica de lumark-portafolio (prefijo lm-) */
 .lm-page {
-  --lm-bg: #ffffff;
-  --lm-text-dark: #000000;
-  --lm-text-secondary: rgba(0, 0, 0, 0.6);
-  --lm-font-title: 'Outfit', 'Figtree', sans-serif;
-  --lm-font-body: 'Inter', 'Figtree', sans-serif;
+  --lm-bg: #f4f4f2;
+  --lm-text-dark: #111111;
+  --lm-text-secondary: rgba(17, 17, 17, 0.6);
+  --lm-font-title: 'Figtree', sans-serif;
+  --lm-font-body: 'Figtree', sans-serif;
   font-family: var(--lm-font-body);
   background: var(--lm-bg);
   color: var(--lm-text-dark);
@@ -31,12 +31,12 @@
   font-weight: 800;
   font-size: 1.2rem;
   letter-spacing: -0.02em;
-  color: #000;
+  color: #111111;
 }
 
 .lm-topbar__brand span {
-  background: #000;
-  color: #fff;
+  background: #111111;
+  color: #FFFEFC;
   padding: 0 0.4rem;
   border-radius: 6px;
   margin-left: 0.35rem;
@@ -47,14 +47,14 @@
   font-weight: 600;
   font-size: 0.95rem;
   padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  color: #000;
+  border-radius: 100px;
+  border: 1px solid rgba(17, 17, 17, 0.12);
+  color: #111111;
   text-decoration: none;
   transition: all 0.25s ease;
 }
 
-.lm-topbar__back:hover { background: #000; color: #fff; }
+.lm-topbar__back:hover { background: #111111; color: #FFFEFC; transform: translateY(-2px); }
 .lm-topbar__back img { width: 0.95em; height: 0.95em; }
 
 .lm-container {
@@ -75,7 +75,7 @@
 /* HERO */
 .lm-hero {
   position: relative;
-  background: #ffffff;
+  background: var(--lm-bg);
   padding: 4rem 0 0;
 }
 
@@ -83,11 +83,11 @@
 
 .lm-badge {
   display: inline-block;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #111111;
+  border: 1px solid rgba(17, 17, 17, 0.1);
   padding: 0.5rem 1.2rem;
-  border-radius: 30px;
-  color: #000;
+  border-radius: 100px;
+  color: #FFFEFC;
   font-family: var(--lm-font-title);
   font-weight: 800;
   font-size: 0.85rem;
@@ -108,8 +108,8 @@
 
 .lm-highlight {
   display: inline-block;
-  background: linear-gradient(135deg, #000, #333);
-  color: #fff;
+  background: #111111;
+  color: #FFFEFC;
   padding: 0 1rem;
   border-radius: 12px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -132,26 +132,28 @@
 
 .lm-btn {
   font-family: var(--lm-font-title);
-  font-weight: 600;
+  font-weight: 700;
   padding: 1.1rem 2rem;
-  border-radius: 12px;
+  border-radius: 100px;
   font-size: 1.05rem;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
   border: none;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .lm-btn--light {
-  background: #000;
-  color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #111111;
+  color: #FFFEFC;
+  border: none;
 }
 
 .lm-btn--light:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  background: #fff;
-  color: #000;
+  background: linear-gradient(135deg, #ff6b2b 0%, #e65100 55%, #111111 100%);
+  color: #FFFEFC;
 }
 
 .lm-hero__image-wrapper {
