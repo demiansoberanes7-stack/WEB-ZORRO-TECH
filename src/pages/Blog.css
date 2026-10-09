@@ -166,6 +166,8 @@
   letter-spacing: 0.05em;
   display: block;
   margin-bottom: 12px;
+  animation: smoothFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.1s;
 }
 
 .blog-post-title {
@@ -175,6 +177,8 @@
   margin: 0;
   line-height: 1.1;
   letter-spacing: -0.02em;
+  animation: smoothFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.2s;
 }
 
 .blog-post-cover-wrapper {
@@ -191,6 +195,8 @@
   object-position: center;
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  animation: smoothFadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.3s;
 }
 
 .blog-post-content {
