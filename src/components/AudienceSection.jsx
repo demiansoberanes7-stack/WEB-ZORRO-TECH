@@ -49,7 +49,7 @@ function Doodle({ index }) {
 export default function AudienceSection() {
   return <section className="zt-dark zt-audience-section" id="para-quien" aria-labelledby="audience-heading">
     <div className="zt-trusted">
-      <Reveal direction="up"><p>Conoce todos nuestros servicios</p></Reveal>
+
       <div className="zt-marquee">
         <div className="zt-marquee__track">
           {[0, 1].map(copy => <div className="zt-marquee__group" key={copy} aria-hidden={copy === 1 ? true : undefined}>

@@ -12,7 +12,7 @@ export default function DemoSection() {
     <section className="zt-dark zt-demo" id="demo" aria-labelledby="demo-heading">
       <div className="zt-container">
         <Reveal direction="up">
-          <h2 className="zt-heading" id="demo-heading">Aprende con nuestro contenido</h2>
+          <h2 className="zt-heading" id="demo-heading">Revisa nuestro blog</h2>
         </Reveal>
         <Reveal direction="up" delay={0.12}>
           <p className="zt-demo__lead">Descubre artículos sobre tecnología, marketing y psicología del consumidor en nuestro blog.</p>
