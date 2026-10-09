@@ -15,8 +15,8 @@ export default function Hero() {
       <motion.div className="hero__mask" style={scene.enabled ? { width, height, borderRadius } : {}}>
         <video className="hero__video" src={HERO_VIDEO} autoPlay muted playsInline loop preload="metadata" aria-hidden="true" />
         <motion.div className="hero__content" style={scene.enabled ? { opacity } : {}}>
-          <h1>Facilitamos tus procesos tecnológicos</h1>
-          <p>Sitios web, invitaciones digitales y mantenimiento de equipo de cómputo<br /> para pequeños negocios.</p>
+          <h1>Impulsamos tu negocio con tecnología</h1>
+          <p>Especialistas en mantenimiento y venta de equipo de cómputo, desarrollo de sitios web y campañas de marketing digital.</p>
           <a className="button" href="https://wa.me/526645495385?text=Hola%2C%20me%20interesa%20comenzar%20con%20sus%20servicios." target="_blank" rel="noopener noreferrer">Quiero empezar</a>
           <p className="hero__subtitle">Tijuana · Soluciones accesibles · Sin complicaciones</p>
         </motion.div>
