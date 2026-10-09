@@ -3,23 +3,22 @@ import { useState, useEffect } from 'react';
 import './ContenidoMultimedia.css';
 import './Blog.css';
 
-const WHATSAPP = 'https://wa.me/526645495385?text=Hola%2C%20quiero%20recibir%20novedades%20del%20blog%20de%20Zorro%20Tech.';
+const WHATSAPP = 'https://wa.me/526645495385?text=Hola%2C%20quiero%20más%20información%20sobre%20el%20blog%20de%20Zorro%20Tech.';
 
 export default function Blog() {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Obtenemos los blogs directamente desde la nube de GitHub en tiempo real
     const fetchBlogs = async () => {
       try {
-        const response = await fetch('https://raw.githubusercontent.com/demiansoberanes7-stack/WEB-ZORRO-TECH/main/src/data/blogs.json' + '?t=' + new Date().getTime());
+        const response = await fetch('https://raw.githubusercontent.com/demiansoberanes7-stack/WEB-ZORRO-TECH/main/src/data/blogs.json?t=' + new Date().getTime());
         if (response.ok) {
           const data = await response.json();
           setBlogs(data);
         }
       } catch (error) {
-        console.error('Error cargando los blogs desde la nube:', error);
+        console.error('Error cargando los blogs:', error);
       } finally {
         setLoading(false);
       }
@@ -36,39 +35,39 @@ export default function Blog() {
 
       <section className="blog-header-section">
         <div className="blog-header-inner">
-          <span className="lm-badge">Blog · Zorro Tech</span>
-          <h1 className="lm-hero__title" style={{ marginTop: '20px', marginBottom: '16px' }}>
-            Ideas, consejos y{' '}
-            <span className="lm-highlight">tecnología</span>
-          </h1>
-          <p className="lm-hero__description" style={{ maxWidth: '520px', margin: '0 auto' }}>
-            Artículos sobre sitios web, herramientas digitales y estrategias para hacer crecer tu negocio en internet.
-          </p>
+          <p className="blog-header-hint">Haz clic en el artículo de tu interés</p>
         </div>
       </section>
 
       <section className="blog-grid-section">
-        <div className="lm-container">
+        <div className="blog-grid-container">
           {loading ? (
-            <p style={{ textAlign: 'center', padding: '50px', fontSize: '1.2rem' }}>Cargando artículos desde la nube...</p>
+            <p style={{ textAlign: 'center', padding: '50px', fontSize: '1.2rem' }}>Cargando artículos...</p>
           ) : blogs.length === 0 ? (
             <div style={{ textAlign: 'center', padding: '50px' }}>
               <h2>Aún no hay artículos publicados.</h2>
-              <p>Vuelve pronto para leer nuestro contenido.</p>
             </div>
           ) : (
             <div className="blog-grid">
               {blogs.map(blog => (
                 <article key={blog.id} className="blog-card">
                   <div className="blog-card-image">
-                    <img src={blog.coverUrl} alt={blog.title} onError={(e) => e.target.src = '/assets/zorro-logo.jpg'} />
+                    <img
+                      src={blog.coverUrl}
+                      alt={blog.title}
+                      onError={(e) => e.target.src = '/assets/zorro-logo.jpg'}
+                    />
                   </div>
                   <div className="blog-card-content">
-                    <span className="blog-date">{blog.date}</span>
                     <h3 className="blog-title">{blog.title}</h3>
+                    <p className="blog-card-date">{blog.date}</p>
                     <p className="blog-description">{blog.description}</p>
-                    <Link to={`/blog/${blog.id}`} className="blog-read-more">
-                      Leer artículo completo →
+                    <div className="blog-tags">
+                      <span className="blog-tag">Tecnología</span>
+                      <span className="blog-tag">Zorro Tech</span>
+                    </div>
+                    <Link to={`/blog/${blog.id}`} className="blog-btn">
+                      Leer artículo ↗
                     </Link>
                   </div>
                 </article>
