@@ -2,6 +2,13 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+  
+  # 1. Si es un bot de Facebook/WhatsApp/Twitter y está pidiendo un blog, mandarlo al archivo PHP que lee los datos correctos
+  RewriteCond %{HTTP_USER_AGENT} (facebookexternalhit|WhatsApp|Twitterbot|LinkedInBot|Pinterest|Slackbot|Discordbot) [NC]
+  RewriteCond %{REQUEST_URI} ^/blog/([0-9]+)
+  RewriteRule ^(.*)$ /blog-og.php?id=%1 [L]
+
+  # 2. Reglas normales de SPA (React) para usuarios humanos
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
