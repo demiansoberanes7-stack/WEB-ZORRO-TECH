@@ -42,15 +42,19 @@
       background: #f4f4f2;
       color: var(--dark);
       -webkit-font-smoothing: antialiased;
-    }    /* ════════════════════════════════════════════
+    }
+
+    /* ════════════════════════════════════════════
        HERO BANNER — 16:9
     ════════════════════════════════════════════ */
     .hero {
       width: 100%;
       aspect-ratio: 16 / 9;
-      background: var(--dark);
+      background: #111111;
       position: relative;
       overflow: hidden;
+      display: flex;
+      align-items: center;
     }
 
     /* Warm glow blobs */
@@ -63,27 +67,95 @@
     .hero__blob--1 {
       width: 45%; height: 80%;
       background: radial-gradient(circle, #ff6b2b 0%, transparent 65%);
-      opacity: 0.35;
-      top: -20%; left: -10%;
+      opacity: 0.3;
+      top: -20%; left: -5%;
     }
     .hero__blob--2 {
       width: 35%; height: 70%;
       background: radial-gradient(circle, #e65100 0%, transparent 65%);
-      opacity: 0.22;
+      opacity: 0.18;
       bottom: -15%; right: 15%;
     }
     .hero__blob--3 {
       width: 25%; height: 55%;
       background: radial-gradient(circle, #ff6b2b 0%, transparent 65%);
-      opacity: 0.15;
+      opacity: 0.12;
       top: 10%; right: -5%;
-    }      flex-shrink: 0;
-      align-self: flex-end;
     }
+
+    .hero__inner {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+      padding: 5% 6% 5% 7%;
+    }
+
+    .hero__left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4%;
+    }
+
+    .hero__title {
+      font-size: clamp(1.6rem, 4.5vw, 5rem);
+      font-weight: 900;
+      line-height: 1.0;
+      letter-spacing: -0.01em;
+      color: #FFFEFC;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .hero__title span {
+      color: #ff6b2b;
+    }
+
+    .hero__price-pill {
+      display: inline-block;
+      background: var(--orange-grd);
+      color: #fff;
+      font-size: clamp(1.2rem, 3.5vw, 3.8rem);
+      font-weight: 900;
+      padding: 0.4em 0.8em;
+      border-radius: 100px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero__sub {
+      font-size: clamp(0.55rem, 1.2vw, 1.1rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255,254,252,0.6);
+    }
+
+    .hero__right {
+      flex: 0 0 38%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .hero__mascot {
+      height: 90%;
+      width: auto;
+      object-fit: contain;
+      animation: float 4s ease-in-out infinite alternate;
+      filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+    }
+
     @keyframes float {
       from { transform: translateY(0); }
       to   { transform: translateY(-14px); }
     }
+
+
 
     /* ══════════════════════════════════════════
        SERVICES SECTION
@@ -380,6 +452,16 @@
     <div class="hero__blob hero__blob--1" aria-hidden="true"></div>
     <div class="hero__blob hero__blob--2" aria-hidden="true"></div>
     <div class="hero__blob hero__blob--3" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <div class="hero__left">
+        <h1 class="hero__title">Mantenimiento<br><span>de PC's y Laptops</span></h1>
+        <div class="hero__price-pill">$350.00 MXN</div>
+        <p class="hero__sub">Pregunta por el servicio a domicilio</p>
+      </div>
+      <div class="hero__right">
+        <img class="hero__mascot" src="/assets/zorro-logo.jpg" alt="Mascota Zorro Tech" />
+      </div>
+    </div>
   </section>
 
   <!-- ── Services Cards ── -->
