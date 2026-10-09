@@ -15,6 +15,11 @@ export default function AdminBlog() {
   const [isLoading, setIsLoading] = useState(false);
   const [fileSha, setFileSha] = useState('');
   const [message, setMessage] = useState('');
+  
+  // Estados para Drag & Drop
+  const [imageFile, setImageFile] = useState(null);
+  const [imagePreview, setImagePreview] = useState('');
+  const [isDragging, setIsDragging] = useState(false);
 
   // Cargar blogs desde GitHub si hay token
   useEffect(() => {
@@ -89,20 +94,70 @@ export default function AdminBlog() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const uploadImageToGitHub = async (file) => {
+    const octokit = new Octokit({ auth: token });
+    const reader = new FileReader();
+
+    return new Promise((resolve, reject) => {
+      reader.onloadend = async () => {
+        try {
+          const base64Data = reader.result.split(',')[1];
+          const fileExtension = file.name.split('.').pop();
+          const fileName = `blog-${Date.now()}.${fileExtension}`;
+          const filePath = `public/assets/blogs/${fileName}`;
+
+          await octokit.repos.createOrUpdateFileContents({
+            owner: REPO_OWNER,
+            repo: REPO_NAME,
+            path: filePath,
+            message: `Subir imagen de portada: ${fileName}`,
+            content: base64Data
+          });
+
+          // Retornar la URL directa de raw.githubusercontent para que cargue instantáneo
+          const rawUrl = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/main/${filePath}`;
+          resolve(rawUrl);
+        } catch (error) {
+          console.error("Error subiendo imagen:", error);
+          reject(error);
+        }
+      };
+      reader.readAsDataURL(file);
+    });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.title || !formData.description || !formData.coverUrl) {
-      alert('Por favor, llena todos los campos.');
+    if (!formData.title || !formData.description || (!formData.coverUrl && !imageFile)) {
+      alert('Por favor, llena todos los campos y sube una imagen.');
       return;
+    }
+
+    setIsLoading(true);
+    setMessage('Procesando datos...');
+
+    let finalCoverUrl = formData.coverUrl;
+    
+    // Si hay una nueva imagen, subirla primero
+    if (imageFile) {
+      setMessage('Subiendo imagen a la nube...');
+      try {
+        finalCoverUrl = await uploadImageToGitHub(imageFile);
+      } catch (error) {
+        setMessage('Error al subir la imagen.');
+        setIsLoading(false);
+        return;
+      }
     }
 
     let updatedBlogs;
     if (isEditing) {
-      updatedBlogs = blogs.map(b => b.id === formData.id ? { ...b, ...formData } : b);
+      updatedBlogs = blogs.map(b => b.id === formData.id ? { ...b, ...formData, coverUrl: finalCoverUrl } : b);
       setIsEditing(false);
     } else {
       const newBlog = {
         ...formData,
+        coverUrl: finalCoverUrl,
         id: Date.now().toString(),
         date: new Date().toISOString().split('T')[0]
       };
@@ -110,11 +165,15 @@ export default function AdminBlog() {
     }
     
     setFormData({ id: '', title: '', description: '', coverUrl: '' });
-    saveToGitHub(updatedBlogs); // Automáticamente guarda en Github al publicar
+    setImageFile(null);
+    setImagePreview('');
+    saveToGitHub(updatedBlogs);
   };
 
   const handleEdit = (blog) => {
     setFormData(blog);
+    setImagePreview(blog.coverUrl);
+    setImageFile(null);
     setIsEditing(true);
   };
 
@@ -191,20 +250,46 @@ export default function AdminBlog() {
             </div>
 
             <div className="form-group">
-              <label>URL de la Portada (Imagen)</label>
-              <input 
-                type="text" 
-                name="coverUrl" 
-                value={formData.coverUrl} 
-                onChange={handleInputChange} 
-                placeholder="/assets/mi-imagen.jpg o https://..."
-                disabled={isLoading}
-              />
-              {formData.coverUrl && (
-                <div className="preview-image">
-                  <img src={formData.coverUrl} alt="Vista previa" onError={(e) => e.target.style.display = 'none'} />
-                </div>
-              )}
+              <label>Portada (Arrastra y suelta tu imagen aquí)</label>
+              <div 
+                className={`drag-drop-zone ${isDragging ? 'dragging' : ''}`}
+                onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
+                onDragLeave={() => setIsDragging(false)}
+                onDrop={(e) => {
+                  e.preventDefault();
+                  setIsDragging(false);
+                  if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+                    const file = e.dataTransfer.files[0];
+                    if (file.type.startsWith('image/')) {
+                      setImageFile(file);
+                      setImagePreview(URL.createObjectURL(file));
+                    } else {
+                      alert('Por favor selecciona una imagen válida.');
+                    }
+                  }
+                }}
+                onClick={() => document.getElementById('fileUpload').click()}
+              >
+                {imagePreview ? (
+                  <img src={imagePreview} alt="Vista previa" className="preview-image-drop" />
+                ) : (
+                  <p>Arrastra tu imagen aquí o haz clic para subir</p>
+                )}
+                <input 
+                  type="file" 
+                  id="fileUpload" 
+                  accept="image/*"
+                  style={{ display: 'none' }}
+                  onChange={(e) => {
+                    if (e.target.files && e.target.files[0]) {
+                      const file = e.target.files[0];
+                      setImageFile(file);
+                      setImagePreview(URL.createObjectURL(file));
+                    }
+                  }}
+                  disabled={isLoading}
+                />
+              </div>
             </div>
 
             <div className="form-actions">
