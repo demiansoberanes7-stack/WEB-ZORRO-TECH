@@ -17,9 +17,9 @@ const services = [
   'Accesorios',
 ];
 const audiences = [
-  { title: 'Emprendedores y pequeños negocios', text: 'Dale presencia a tu negocio con un sitio web, publicidad y contenido para redes sociales. Te ayudamos a mostrar lo que ofreces y facilitar el contacto con tus clientes.' },
-  { title: 'Personas que celebran momentos importantes', text: 'Haz especial tu próxima celebración con una invitación digital o una canción creada para ti. Dale un toque personal a cumpleaños, bodas, aniversarios y esos momentos que quieres recordar.' },
-  { title: 'Personas que dependen de su computadora', text: '¿Tu computadora necesita mantenimiento o buscas equipo y accesorios? Te ayudamos a cuidar tu PC y elegir lo que necesitas para trabajar, estudiar o disfrutar de tus actividades sin complicaciones.' },
+  { title: 'Dueños de negocios que quieren más', text: 'Sabes que tu negocio es bueno, pero necesitas que más personas lo vean. Te ayudamos a crear un sitio web vendedor, contenido que conecte y publicidad que traiga mensajes reales a tu WhatsApp.' },
+  { title: 'Creadores de momentos importantes', text: 'Haz especial tu próxima celebración con una invitación digital interactiva o una canción original. Dale un toque personal y único a bodas, cumpleaños y aniversarios que tus invitados no olvidarán.' },
+  { title: 'Profesionales que dependen de su equipo', text: 'Cuando tu computadora falla, tu día se detiene. Desde mantenimiento preventivo hasta la venta de equipos y accesorios, nos aseguramos de que siempre tengas las herramientas listas para trabajar sin estrés.' },
 ];
 
 function Doodle({ index }) {

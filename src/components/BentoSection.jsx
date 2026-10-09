@@ -9,34 +9,34 @@ const CAMPANAS_MSG = encodeURIComponent('Comprendo que la información financier
 
 const cards = [
   {
-    title: 'Portafolio web', icon: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/solid/globe.svg', gradient: 'blue', preview: 'web',
-    text: 'Conoce nuestra propuesta de sitios web: diseños claros, adaptados a celulares y pensados para presentar tu negocio.',
+    title: 'Tu negocio, abierto 24/7', icon: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/solid/globe.svg', gradient: 'blue', preview: 'web',
+    text: 'Más que un sitio web, diseñamos una herramienta comercial que genera confianza. Rápido, atractivo en celulares y pensado para que tus visitantes decidan comprar o contactarte.',
     tags: ['Sitios web', 'Landing pages', 'Diseño responsive'],
-    action: { label: 'Ver sitios web', to: '/portafolio-web' },
+    action: { label: 'Ver casos reales', to: '/portafolio-web' },
   },
   {
-    title: 'Contenido multimedia', icon: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/solid/video.svg', gradient: 'indigo', flip: true, preview: 'media',
-    text: 'Dale una mirada al lado creativo: diseño, video y contenido para comunicar tu marca en redes sociales y medios digitales.',
+    title: 'Comunicación que conecta', icon: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/solid/video.svg', gradient: 'indigo', flip: true, preview: 'media',
+    text: 'La gente no lee anuncios, consume historias. Creamos contenido multimedia, videos y piezas visuales que hacen que tu marca deje de ser invisible en redes sociales.',
     tags: ['Diseño', 'Video', 'Redes sociales'],
-    action: { label: 'Ver contenido multimedia', to: '/contenido-multimedia' },
+    action: { label: 'Explorar contenido', to: '/contenido-multimedia' },
   },
   {
-    title: 'CRM en desarrollo', icon: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/solid/users.svg', gradient: 'magenta', preview: 'crm',
-    text: 'Conoce el enfoque de nuestro CRM en desarrollo: organizar contactos, dar seguimiento a oportunidades y simplificar tareas en un solo lugar.',
+    title: 'Control total (CRM)', icon: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/solid/users.svg', gradient: 'magenta', preview: 'crm',
+    text: '¿Pierdes clientes por olvidar responderles? Estamos creando un sistema para organizar tus contactos y seguimientos. Para que te enfoques en vender y el sistema haga el resto.',
     tags: ['Contactos', 'Seguimiento', 'Automatización'],
-    action: { label: 'Ver en GitHub', href: 'https://github.com/demiansoberanes7-stack/crm-lumarketing' },
+    action: { label: 'Ver detrás de cámaras (GitHub)', href: 'https://github.com/demiansoberanes7-stack/crm-lumarketing' },
   },
   {
-    title: 'Campañas realizadas', icon: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/solid/bullhorn.svg', gradient: 'violet', flip: true, preview: 'campaigns',
-    text: 'Conoce cómo combinamos estrategia, mensajes y piezas creativas para dar visibilidad a los negocios y acercarlos a sus clientes.',
-    tags: ['Publicidad', 'Estrategia', 'Creatividad'],
-    action: { label: 'Hablar por WhatsApp', href: `https://wa.me/526645495385?text=${CAMPANAS_MSG}` },
+    title: 'Campañas de resultados', icon: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/solid/bullhorn.svg', gradient: 'violet', flip: true, preview: 'campaigns',
+    text: 'No cobramos por conseguirte "likes". Diseñamos estrategias enfocadas en que personas reales conozcan tu producto y te envíen un mensaje interesadas en comprar.',
+    tags: ['Publicidad', 'Estrategia', 'Conversión'],
+    action: { label: 'Cuéntame de tu negocio', href: `https://wa.me/526645495385?text=${CAMPANAS_MSG}` },
   },
   {
-    title: 'Trayectoria Laboral', icon: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/solid/briefcase.svg', gradient: 'blue', wide: true, preview: 'career',
-    text: 'Conoce el perfil detrás de Zorro Tech y las áreas que conectamos para ayudarte: desarrollo web, soporte técnico y comunicación digital.',
+    title: 'La cara detrás del código', icon: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/solid/briefcase.svg', gradient: 'blue', wide: true, preview: 'career',
+    text: 'Soy Axel Demian. Conecto el desarrollo web, el soporte de TI y la psicología del consumidor para darte soluciones que realmente entiendas y hagan crecer tu negocio.',
     tags: ['Desarrollo web', 'Soporte TI', 'Marketing digital'],
-    action: { label: 'Descargar CV (PDF)', href: '/assets/docs/CV_Axel_Demian_Soberanes_ATS_Espanol.pdf' },
+    action: { label: 'Descargar Trayectoria (PDF)', href: '/assets/docs/CV_Axel_Demian_Soberanes_ATS_Espanol.pdf' },
   },
 ];
 
