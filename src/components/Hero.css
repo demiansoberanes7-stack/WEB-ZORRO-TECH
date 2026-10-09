@@ -19,25 +19,28 @@
   .scroll-scene .hero__camera { padding: 8px; }
   .scroll-scene .hero__mask { border-radius: 16px; }
   .scroll-scene .hero__content { left: 16px; right: 16px; bottom: 20px; width: auto; }
-  .scroll-scene .hero h1 { font-size: clamp(28px, 7vw, 48px); }
-  .scroll-scene .hero__content p { font-size: clamp(15px, 3.2vw, 20px); margin: 12px 0 20px; }
-  .scroll-scene .hero__content .button { padding: 17px 30px; font-size: 17px; }
+  .scroll-scene .hero h1 { font-size: clamp(32px, 8vw, 52px); }
+  .scroll-scene .hero__content p { font-size: clamp(17px, 4vw, 22px); margin: 16px 0 24px; }
+  .scroll-scene .hero__content .button { padding: 18px 32px; font-size: 18px; }
+  .scroll-scene .hero__subtitle { font-size: clamp(14px, 3vw, 18px); margin-top: 24px; }
 }
 @media (max-width: 480px) {
   .hero { height: 140svh; }
   .scroll-scene .hero__camera { padding: 6px; }
   .scroll-scene .hero__mask { border-radius: 12px; }
-  .scroll-scene .hero__content { left: 12px; right: 12px; bottom: 16px; }
-  .scroll-scene .hero h1 { font-size: clamp(24px, 7vw, 40px); }
-  .scroll-scene .hero__content p { font-size: clamp(14px, 3.2vw, 18px); margin: 8px 0 16px; }
-  .scroll-scene .hero__content .button { padding: 15px 26px; font-size: 16px; }
+  .scroll-scene .hero__content { left: 12px; right: 12px; bottom: 24px; }
+  .scroll-scene .hero h1 { font-size: clamp(28px, 9vw, 44px); }
+  .scroll-scene .hero__content p { font-size: clamp(16px, 4.5vw, 20px); margin: 14px 0 24px; }
+  .scroll-scene .hero__content .button { padding: 18px 28px; font-size: 18px; width: 100%; text-align: center; }
+  .scroll-scene .hero__subtitle { font-size: clamp(14px, 3.8vw, 18px); margin-top: 24px; text-align: center; line-height: 1.4; }
 }
 @media (max-width: 600px) { .hero__video { object-position: 50% center; } .hero__mask::after { background: linear-gradient(0deg, #010f2b99, transparent); } .hero__content p br { display: none; } }
 @media (max-width: 480px) {
   .hero.scene-static .hero__camera { padding: 8px; }
   .scene-static .hero__mask { border-radius: 20px; }
-  .scene-static .hero__content { left: 16px; right: 16px; bottom: 20px; }
-  .scene-static .hero h1 { font-size: clamp(28px, 7vw, 42px); }
-  .scene-static .hero__content p { font-size: clamp(14px, 3.5vw, 18px); margin: 12px 0 20px; }
-  .scene-static .hero__content .button { padding: 15px 26px; font-size: 16px; }
+  .scene-static .hero__content { left: 16px; right: 16px; bottom: 24px; }
+  .scene-static .hero h1 { font-size: clamp(30px, 9vw, 46px); }
+  .scene-static .hero__content p { font-size: clamp(16px, 4.5vw, 20px); margin: 14px 0 24px; }
+  .scene-static .hero__content .button { padding: 18px 28px; font-size: 18px; width: 100%; text-align: center; }
+  .scene-static .hero__subtitle { font-size: clamp(14px, 3.8vw, 18px); margin-top: 24px; text-align: center; line-height: 1.4; }
 }

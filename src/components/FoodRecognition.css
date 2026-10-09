@@ -5,10 +5,10 @@
 .metrics-hour { width: 25vw; flex: none; display: flex; align-items: flex-start; flex-direction: column; gap: 24px; padding-left: 3vw; background: repeating-linear-gradient(90deg, transparent 0 calc(2vw - 1px), rgba(17,17,17,0.1) calc(2vw - 1px) 2vw) left top / 100% 24px no-repeat; }
 .metrics-hour span:first-child { background: #FFFEFC; padding: 0 8px; font-weight: 600; color: #111111;}
 .metrics-hour span:last-child { color: rgba(17,17,17,0.5); }
-.metrics-symbol { position: absolute; top: 15svh; left: calc(50% - 38px); width: 76px; height: 76px; border: 1px solid rgba(255,107,43,0.3); border-radius: 50%; display: grid; place-items: center; font-size: 30px; background: #FFFEFC; box-shadow: 0 4px 16px rgba(255,107,43,0.15); }
+.metrics-symbol { position: absolute; top: 15svh; left: calc(50% - 38px); width: 76px; height: 76px; border: 1px solid rgba(255,107,43,0.3); border-radius: 50%; display: grid; place-items: center; font-size: 30px; background: #FFFEFC; box-shadow: 0 4px 16px rgba(255,107,43,0.15); will-change: transform; transform: translateZ(0); }
 .metrics-symbol img { width: .85em; height: .85em; object-fit: contain; display: block; filter: invert(0.4) sepia(1) saturate(5) hue-rotate(350deg); }
-.metrics-graph { position: absolute; bottom: 7svh; width: 100%; height: 64svh; z-index: -1; overflow: visible; }
-.metrics-titles { display: flex; width: 400vw; height: 100%; }
+.metrics-graph { position: absolute; bottom: 7svh; width: 100%; height: 64svh; z-index: -1; overflow: visible; will-change: transform; transform: translateZ(0); }
+.metrics-titles { display: flex; width: 400vw; height: 100%; will-change: transform; transform: translateZ(0); }
 .metrics-mode { flex: 0 0 100vw; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 13svh 3vw 8svh; text-align: center; }
 .metrics-mode h3 { font-size: 15vw; line-height: .95; font-weight: 800; letter-spacing: -.06em; background: linear-gradient(135deg, #111111, #ff6b2b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .metrics-mode--3 h3 { max-width: 92vw; }
@@ -25,29 +25,29 @@
 .scene-static .metrics-mode p { position: static; width: 100%; }
 @media (max-width: 768px) {
   .food-recognition { height: 400svh; }
-  .scroll-scene .metrics-mode h3 { font-size: clamp(28px, 10vw, 60px); }
-  .scroll-scene .metrics-mode h2 { font-size: clamp(24px, 6vw, 40px); }
+  .scroll-scene .metrics-mode h3 { font-size: clamp(32px, 10vw, 64px); }
+  .scroll-scene .metrics-mode h2 { font-size: clamp(28px, 6vw, 44px); }
   .scroll-scene .metrics-mode { padding: 15svh 20px 12svh; min-height: auto; }
-  .scroll-scene .metrics-mode p { position: static; width: 100%; max-width: 100%; font-size: clamp(14px, 3vw, 20px); margin-top: 16px; }
+  .scroll-scene .metrics-mode p { position: static; width: 100%; max-width: 100%; font-size: clamp(16px, 3.5vw, 22px); margin-top: 16px; }
   .scroll-scene .metrics-graph { height: 50svh; bottom: 10svh; }
-  .scroll-scene .metrics-timeline { top: 8svh; }
+  .scroll-scene .metrics-timeline { top: 8svh; will-change: transform; transform: translateZ(0); }
   .scroll-scene .metrics-symbol { top: 12svh; width: 60px; height: 60px; font-size: 24px; }
-  .scroll-scene .metrics-controls { bottom: 16px; right: 50%; transform: translateX(50%); }
-  .scroll-scene .metrics-controls button { font-size: 13px; padding: 8px 14px; }
+  .scroll-scene .metrics-controls { bottom: 16px; right: 50%; transform: translateX(50%); white-space: nowrap; }
+  .scroll-scene .metrics-controls button { font-size: 14px; padding: 10px 18px; }
   .food-recognition.scene-static { padding: 0; }
   .scene-static .metrics-mode { padding: 40px 20px; min-height: 250px; gap: 20px; }
-  .scene-static .metrics-mode h3 { font-size: clamp(28px, 10vw, 60px); }
-  .scene-static .metrics-mode h2 { font-size: clamp(24px, 6vw, 40px); }
+  .scene-static .metrics-mode h3 { font-size: clamp(32px, 10vw, 64px); }
+  .scene-static .metrics-mode h2 { font-size: clamp(28px, 6vw, 44px); }
 }
 @media (max-width: 480px) {
   .food-recognition { height: 420svh; }
-  .scroll-scene .metrics-mode h3 { font-size: clamp(22px, 10vw, 48px); }
-  .scroll-scene .metrics-mode h2 { font-size: clamp(20px, 6vw, 32px); }
+  .scroll-scene .metrics-mode h3 { font-size: clamp(28px, 12vw, 56px); }
+  .scroll-scene .metrics-mode h2 { font-size: clamp(24px, 8vw, 40px); }
   .scroll-scene .metrics-mode { padding: 12svh 16px 10svh; }
-  .scroll-scene .metrics-mode p { font-size: clamp(13px, 3vw, 18px); margin-top: 12px; }
+  .scroll-scene .metrics-mode p { font-size: clamp(16px, 4.5vw, 22px); margin-top: 16px; line-height: 1.4; }
   .scroll-scene .metrics-symbol { top: 10svh; width: 50px; height: 50px; font-size: 20px; }
-  .scroll-scene .metrics-controls button { font-size: 12px; padding: 6px 12px; }
+  .scroll-scene .metrics-controls button { font-size: 14px; padding: 10px 16px; }
   .scene-static .metrics-mode { padding: 32px 16px; min-height: 200px; gap: 16px; }
-  .scene-static .metrics-mode h2, .scene-static .metrics-mode h3 { font-size: clamp(22px, 8vw, 44px); }
-  .scene-static .metrics-mode p { font-size: clamp(13px, 3.5vw, 17px); }
+  .scene-static .metrics-mode h2, .scene-static .metrics-mode h3 { font-size: clamp(26px, 8vw, 50px); }
+  .scene-static .metrics-mode p { font-size: clamp(16px, 4.5vw, 22px); line-height: 1.4; }
 }
