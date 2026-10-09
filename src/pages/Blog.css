@@ -85,6 +85,10 @@
   line-height: 1.6;
   margin: 0 0 24px 0;
   flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Maximo 3 lineas en la tarjeta */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .blog-read-more {

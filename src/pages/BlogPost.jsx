@@ -65,7 +65,9 @@ export default function BlogPost() {
         </div>
 
         <div className="blog-post-content lm-container">
-          <p className="blog-post-description">{blog.description}</p>
+          <p className="blog-post-description" style={{ whiteSpace: 'pre-wrap' }}>
+            {blog.content || blog.description}
+          </p>
           
           <div className="blog-post-footer">
             <p>¿Te interesó este tema? Hablemos de cómo aplicarlo a tu negocio.</p>

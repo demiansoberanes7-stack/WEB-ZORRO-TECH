@@ -9,7 +9,7 @@ const FILE_PATH = 'src/data/blogs.json';
 
 export default function AdminBlog() {
   const [blogs, setBlogs] = useState([]);
-  const [formData, setFormData] = useState({ id: '', title: '', description: '', coverUrl: '' });
+  const [formData, setFormData] = useState({ id: '', title: '', description: '', content: '', coverUrl: '' });
   const [isEditing, setIsEditing] = useState(false);
   const [token, setToken] = useState(localStorage.getItem('github_pat') || '');
   const [isLoading, setIsLoading] = useState(false);
@@ -128,8 +128,8 @@ export default function AdminBlog() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.title || !formData.description || (!formData.coverUrl && !imageFile)) {
-      alert('Por favor, llena todos los campos y sube una imagen.');
+    if (!formData.title || !formData.description || !formData.content || (!formData.coverUrl && !imageFile)) {
+      alert('Por favor, llena todos los campos, escribe el contenido y sube una imagen.');
       return;
     }
 
@@ -164,14 +164,14 @@ export default function AdminBlog() {
       updatedBlogs = [...blogs, newBlog];
     }
     
-    setFormData({ id: '', title: '', description: '', coverUrl: '' });
+    setFormData({ id: '', title: '', description: '', content: '', coverUrl: '' });
     setImageFile(null);
     setImagePreview('');
     saveToGitHub(updatedBlogs);
   };
 
   const handleEdit = (blog) => {
-    setFormData(blog);
+    setFormData({ ...blog, content: blog.content || '' });
     setImagePreview(blog.coverUrl);
     setImageFile(null);
     setIsEditing(true);
@@ -238,13 +238,25 @@ export default function AdminBlog() {
             </div>
             
             <div className="form-group">
-              <label>Descripción corta</label>
+              <label>Descripción corta (Resumen para la tarjeta principal)</label>
               <textarea 
                 name="description" 
                 value={formData.description} 
                 onChange={handleInputChange} 
-                placeholder="Un breve resumen de lo que trata el artículo..."
-                rows="4"
+                placeholder="Un breve resumen de 1 o 2 líneas..."
+                rows="2"
+                disabled={isLoading}
+              ></textarea>
+            </div>
+
+            <div className="form-group">
+              <label>Contenido completo del artículo</label>
+              <textarea 
+                name="content" 
+                value={formData.content} 
+                onChange={handleInputChange} 
+                placeholder="Escribe todo el contenido de tu artículo aquí..."
+                rows="8"
                 disabled={isLoading}
               ></textarea>
             </div>
