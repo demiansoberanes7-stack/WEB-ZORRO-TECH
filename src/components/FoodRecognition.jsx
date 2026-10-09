@@ -34,7 +34,7 @@ function curve(values) {
 function GraphDot({ index, progress }) {
   const cy = useTransform(progress, p => valuesAt(p)[index]);
   const end = useTransform(cy, y => y + 65);
-  return <g><motion.line x1={index * 100} x2={index * 100} y1={cy} y2={end} stroke="#dde0e7" /><motion.circle cx={index * 100} cy={cy} r="10" fill="#111" fillOpacity="0.13" /><motion.circle cx={index * 100} cy={cy} r="5" fill="#111" /></g>;
+  return <g><motion.line x1={index * 100} x2={index * 100} y1={cy} y2={end} stroke="rgba(255,107,43,0.3)" /><motion.circle cx={index * 100} cy={cy} r="10" fill="#ff6b2b" fillOpacity="0.2" /><motion.circle cx={index * 100} cy={cy} r="5" fill="#ff6b2b" /></g>;
 }
 export default function FoodRecognition() {
   const scene = useScrollScene([0, 0.2, 0.47, 0.74]);
@@ -50,9 +50,9 @@ export default function FoodRecognition() {
       </motion.div>
       <div className="metrics-symbol" aria-hidden="true"><img src={modes[scene.active].icon} alt="" /></div>
       <svg className="metrics-graph" viewBox="0 0 1300 420" preserveAspectRatio="none" role="img" aria-label="Crece a tu ritmo">
-        <defs><linearGradient id="metrics-fill" x1="0" y1="0" x2="0" y2="1"><stop stopColor="#111" stopOpacity=".18" /><stop offset="1" stopColor="#111" stopOpacity="0" /></linearGradient></defs>
+        <defs><linearGradient id="metrics-fill" x1="0" y1="0" x2="0" y2="1"><stop stopColor="#ff6b2b" stopOpacity=".18" /><stop offset="1" stopColor="#ff6b2b" stopOpacity="0" /></linearGradient></defs>
         <motion.path d={fill} fill="url(#metrics-fill)" />
-        <motion.path d={d} fill="none" stroke="#dcdfe5" strokeWidth="1.5" />
+        <motion.path d={d} fill="none" stroke="#ff6b2b" strokeWidth="2.5" />
         {levels[0].map((_, index) => <GraphDot key={index} {...{ index }} progress={scene.progress} />)}
       </svg>
       <motion.div className="metrics-titles" style={scene.enabled ? { x } : {}}>

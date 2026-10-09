@@ -1,7 +1,7 @@
-.zt-dark { background: #0e0e0e; color: #fff; padding: 72px 0; font-size: 17px; line-height: 1.55; }
+.zt-dark { background: #FFFEFC; color: #111111; padding: 72px 0; font-size: 17px; line-height: 1.55; }
 .zt-container { width: min(100% - 40px, 1280px); margin-inline: auto; }
 .zt-heading { font-size: clamp(30px, 4vw, 46px); font-weight: 700; line-height: 1.15; letter-spacing: -.015em; text-align: center; }
 .zt-dark svg { display: block; max-width: 100%; }
 .zt-dark button { font: inherit; cursor: pointer; }
-.zt-dark :focus-visible { outline: 3px solid #b094ff; outline-offset: 6px; }
+.zt-dark :focus-visible { outline: 3px solid #ff6b2b; outline-offset: 6px; }
 @media (max-width: 720px) { .zt-dark { padding: 56px 0; } }

@@ -1,21 +1,22 @@
-.food-recognition { height: 430svh; background: var(--color-white); }
+.food-recognition { height: 430svh; background: #FFFEFC; }
 .metrics-stage { isolation: isolate; }
-.metrics-pointer { position: absolute; left: calc(50% - 7px); top: 1vw; color: var(--color-blue); }
+.metrics-pointer { position: absolute; left: calc(50% - 7px); top: 1vw; color: #ff6b2b; }
 .metrics-timeline { display: flex; position: absolute; top: 5svh; left: 0; width: 425vw; }
-.metrics-hour { width: 25vw; flex: none; display: flex; align-items: flex-start; flex-direction: column; gap: 24px; padding-left: 3vw; background: repeating-linear-gradient(90deg, transparent 0 calc(2vw - 1px), #ddd calc(2vw - 1px) 2vw) left top / 100% 24px no-repeat; }
-.metrics-hour span:first-child { background: var(--color-white); padding: 0 8px; font-weight: 600; }
-.metrics-symbol { position: absolute; top: 15svh; left: calc(50% - 38px); width: 76px; height: 76px; border: 1px solid #aab0bb; border-radius: 50%; display: grid; place-items: center; font-size: 30px; background: var(--color-white); }
-.metrics-symbol img { width: .85em; height: .85em; object-fit: contain; display: block; }
+.metrics-hour { width: 25vw; flex: none; display: flex; align-items: flex-start; flex-direction: column; gap: 24px; padding-left: 3vw; background: repeating-linear-gradient(90deg, transparent 0 calc(2vw - 1px), rgba(17,17,17,0.1) calc(2vw - 1px) 2vw) left top / 100% 24px no-repeat; }
+.metrics-hour span:first-child { background: #FFFEFC; padding: 0 8px; font-weight: 600; color: #111111;}
+.metrics-hour span:last-child { color: rgba(17,17,17,0.5); }
+.metrics-symbol { position: absolute; top: 15svh; left: calc(50% - 38px); width: 76px; height: 76px; border: 1px solid rgba(255,107,43,0.3); border-radius: 50%; display: grid; place-items: center; font-size: 30px; background: #FFFEFC; box-shadow: 0 4px 16px rgba(255,107,43,0.15); }
+.metrics-symbol img { width: .85em; height: .85em; object-fit: contain; display: block; filter: invert(0.4) sepia(1) saturate(5) hue-rotate(350deg); }
 .metrics-graph { position: absolute; bottom: 7svh; width: 100%; height: 64svh; z-index: -1; overflow: visible; }
 .metrics-titles { display: flex; width: 400vw; height: 100%; }
 .metrics-mode { flex: 0 0 100vw; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 13svh 3vw 8svh; text-align: center; }
-.metrics-mode h3 { font-size: 15vw; line-height: .95; font-weight: 500; letter-spacing: -.06em; color: var(--color-blue); }
+.metrics-mode h3 { font-size: 15vw; line-height: .95; font-weight: 800; letter-spacing: -.06em; background: linear-gradient(135deg, #111111, #ff6b2b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .metrics-mode--3 h3 { max-width: 92vw; }
-.metrics-mode h2 { font-size: 4.4vw; font-weight: 500; color: var(--color-blue); width: 60vw; }
-.metrics-mode p { position: absolute; bottom: 4svh; max-width: 630px; width: 60vw; font-size: clamp(17px, 1.25vw, 26px); color: #65656e; }
+.metrics-mode h2 { font-size: 4.4vw; font-weight: 800; color: #111111; width: 60vw; }
+.metrics-mode p { position: absolute; bottom: 4svh; max-width: 630px; width: 60vw; font-size: clamp(17px, 1.25vw, 26px); color: rgba(17,17,17,0.7); }
 .metrics-controls { position: absolute; right: 15px; bottom: 12px; display: flex; gap: 8px; }
-.metrics-controls button { font-size: 12px; padding: 6px 9px; border-radius: 20px; background: #f0f1f6; color: #555; }
-.metrics-controls button[aria-current] { background: var(--color-blue); color: white; }
+.metrics-controls button { font-size: 12px; padding: 6px 12px; border-radius: 20px; background: rgba(17,17,17,0.05); color: #111111; border: none; font-weight: 600;}
+.metrics-controls button[aria-current] { background: #ff6b2b; color: #FFFEFC; }
 .food-recognition.scene-static { height: auto; }
 .scene-static .metrics-pointer, .scene-static .metrics-symbol, .scene-static .metrics-timeline, .scene-static .metrics-controls, .scene-static .metrics-graph { display: none; }
 .scene-static .metrics-titles { width: 100%; display: block; }

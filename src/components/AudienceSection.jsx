@@ -25,21 +25,21 @@ const audiences = [
 function Doodle({ index }) {
   return <svg className="zt-audience__icon" viewBox="0 0 104 104" fill="none" aria-hidden="true">
     {index === 0 && <>
-      <circle cx="52" cy="52" r="34" stroke="#fff" strokeWidth="4" />
-      <path d="M40 46v4M64 46v4" stroke="#fff" strokeWidth="5" strokeLinecap="round" />
+      <circle cx="52" cy="52" r="34" stroke="#111" strokeWidth="4" />
+      <path d="M40 46v4M64 46v4" stroke="#111" strokeWidth="5" strokeLinecap="round" />
       <path d="M38 62c8 9 20 9 28 0" stroke="#ff6b2b" strokeWidth="5" strokeLinecap="round" />
       <path d="M92 24l4 10 10 4-10 4-4 10-4-10-10-4 10-4 4-10z" fill="#ff6b2b" />
       <path d="M14 74l3 7.5L24.5 84 17 87l-3 7.5L11 87 3.5 84 11 81.5 14 74z" fill="#e65100" />
     </>}
     {index === 1 && <>
-      <rect x="16" y="34" width="72" height="50" rx="8" stroke="#fff" strokeWidth="4" />
-      <path d="M40 34v-6a8 8 0 018-8h8a8 8 0 018 8v6" stroke="#fff" strokeWidth="4" />
+      <rect x="16" y="34" width="72" height="50" rx="8" stroke="#111" strokeWidth="4" />
+      <path d="M40 34v-6a8 8 0 018-8h8a8 8 0 018 8v6" stroke="#111" strokeWidth="4" />
       <path d="M16 54h72" stroke="#ff6b2b" strokeWidth="4" />
       <circle cx="52" cy="54" r="5" fill="#e65100" />
       <path d="M90 16l3 7.5 7.5 3-7.5 3-3 7.5-3-7.5-7.5-3 7.5-3 3-7.5z" fill="#ff6b2b" />
     </>}
     {index === 2 && <>
-      <path d="M20 50L52 24l32 26M28 48v28h48V48" stroke="#fff" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M20 50L52 24l32 26M28 48v28h48V48" stroke="#111" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
       <rect x="44" y="58" width="16" height="18" rx="3" stroke="#ff6b2b" strokeWidth="4" />
       <path d="M78 78c8 2 14 8 16 16" stroke="#e65100" strokeWidth="4" strokeLinecap="round" strokeDasharray="2 8" />
     </>}
