@@ -36,13 +36,13 @@ export default function Blog() {
 
       <section className="blog-header-section">
         <div className="lm-container">
-          <div className="lm-badge">BLOG</div>
+          <div className="lm-badge">BLOG DE ZORRO TECH</div>
           <h1 className="lm-hero__title" style={{ marginTop: '15px' }}>
             Ideas, consejos y<br />
-            <span className="lm-highlight">estrategia digital</span>
+            <span className="lm-highlight">tecnología</span>
           </h1>
           <p className="lm-hero__description" style={{ maxWidth: '600px', margin: '20px auto 0' }}>
-            Artículos sobre tecnología, sitios web y herramientas para hacer crecer tu negocio.
+            Explora nuestros artículos sobre sitios web, herramientas digitales y estrategias para hacer crecer tu negocio en internet.
           </p>
         </div>
       </section>
@@ -67,9 +67,9 @@ export default function Blog() {
                     <span className="blog-date">{blog.date}</span>
                     <h3 className="blog-title">{blog.title}</h3>
                     <p className="blog-description">{blog.description}</p>
-                    <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="blog-read-more">
+                    <Link to={`/blog/${blog.id}`} className="blog-read-more">
                       Leer artículo completo →
-                    </a>
+                    </Link>
                   </div>
                 </article>
               ))}

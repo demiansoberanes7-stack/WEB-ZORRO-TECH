@@ -36,13 +36,18 @@
   width: 100%;
   height: 220px;
   overflow: hidden;
-  background-color: #111;
+  background-color: #f4f4f2; /* Color más suave */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .blog-card-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Cambiamos a contain para que no se corte, o cover si es buena foto */
+  /* Lo dejamos en cover, pero ajustamos la posición para que no corte caras */
+  object-position: top center;
   transition: transform 0.5s ease;
 }
 
@@ -93,4 +98,74 @@
 
 .blog-read-more:hover {
   color: #ff6b2b;
+}
+
+/* ============================
+   SINGLE BLOG POST (BlogPost)
+   ============================ */
+
+.blog-post-article {
+  padding-bottom: 80px;
+  background: #f4f4f2;
+}
+
+.blog-post-header {
+  padding: 80px 20px 40px;
+  text-align: center;
+}
+
+.blog-post-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: #111;
+  margin: 15px 0 0 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.blog-post-cover-wrapper {
+  max-width: 900px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+}
+
+.blog-post-cover {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.blog-post-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.blog-post-description {
+  font-size: 1.3rem;
+  color: #111;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.blog-post-footer {
+  margin-top: 60px;
+  padding: 40px;
+  background: #111;
+  color: white;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.blog-post-footer p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-weight: 600;
 }
