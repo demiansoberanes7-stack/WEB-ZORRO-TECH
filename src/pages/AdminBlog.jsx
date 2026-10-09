@@ -26,6 +26,19 @@ export default function AdminBlog() {
     if (token) fetchBlogsFromGitHub();
   }, [token]);
 
+  // Genera un slug limpio a partir del título: "Mi Blog Genial!" → "mi-blog-genial"
+  const generateSlug = (title) => {
+    return title
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '') // quita acentos
+      .replace(/[^a-z0-9\s-]/g, '')    // quita caracteres especiales
+      .trim()
+      .replace(/\s+/g, '-')             // espacios → guiones
+      .replace(/-+/g, '-')              // guiones dobles → uno
+      .substring(0, 60);                // máximo 60 caracteres
+  };
+
   const fetchBlogsFromGitHub = async () => {
     setIsLoading(true);
     setMessage('Cargando desde la nube...');
@@ -158,7 +171,7 @@ export default function AdminBlog() {
       const newBlog = {
         ...formData,
         coverUrl: finalCoverUrl,
-        id: Date.now().toString(),
+        id: generateSlug(formData.title) || Date.now().toString(),
         date: new Date().toISOString().split('T')[0]
       };
       updatedBlogs = [...blogs, newBlog];
