@@ -35,7 +35,7 @@ export default function Blog() {
 
       <section className="blog-header-section">
         <div className="blog-header-inner">
-          <p className="blog-header-hint">Haz clic en el artículo de tu interés</p>
+          <p className="blog-header-hint">Explora artículos de enseñanza, teorías y conceptos clave de las ciencias</p>
         </div>
       </section>
 
