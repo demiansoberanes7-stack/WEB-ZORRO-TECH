@@ -49,13 +49,14 @@
       gtag('config', 'G-X72PGXDZXK');
     </script>
 
-    <!-- ── Structured Data: LocalBusiness México ── -->
+    <!-- ── Structured Data: LocalBusiness + Servicios (AEO/LLM SEO) ── -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Zorro Tech",
-      "description": "Especialistas en mantenimiento y venta de equipo de cómputo, desarrollo de sitios web y campañas de marketing digital en Tijuana, Baja California, México.",
+      "alternateName": ["Zorro Tech Tijuana", "ZorroTech", "Zorro Tech MX"],
+      "description": "Empresa de tecnología en Tijuana, Baja California, México. Ofrecemos mantenimiento y reparación de computadoras y laptops, venta de equipos de cómputo, diseño y desarrollo de sitios web, marketing digital, publicidad en redes sociales, invitaciones digitales para bodas y XV años, tarjetas de presentación digitales y automatización de procesos para negocios.",
       "url": "https://zorrotech.online/",
       "logo": "https://zorrotech.online/assets/zorro-logo.jpg",
       "image": "https://zorrotech.online/assets/zorro-logo.jpg",
@@ -63,7 +64,7 @@
       "email": "axel_soberanes@zorrotech.online",
       "priceRange": "$$",
       "currenciesAccepted": "MXN",
-      "paymentAccepted": "Efectivo, Transferencia bancaria",
+      "paymentAccepted": "Efectivo, Transferencia bancaria, OXXO Pay",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Tijuana",
@@ -77,28 +78,166 @@
         "longitude": -117.0037
       },
       "areaServed": [
-        {
-          "@type": "City",
-          "name": "Tijuana"
-        },
-        {
-          "@type": "State",
-          "name": "Baja California"
-        }
+        { "@type": "City", "name": "Tijuana" },
+        { "@type": "City", "name": "Ensenada" },
+        { "@type": "City", "name": "Rosarito" },
+        { "@type": "State", "name": "Baja California" }
       ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Zorro Tech",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mantenimiento de computadoras y laptops",
+              "description": "Servicio de mantenimiento preventivo y correctivo, limpieza, reparación y optimización de computadoras de escritorio y laptops en Tijuana. Servicio a domicilio disponible. Precio desde $350 MXN.",
+              "serviceType": "Computer Repair",
+              "provider": { "@type": "LocalBusiness", "name": "Zorro Tech" },
+              "areaServed": { "@type": "City", "name": "Tijuana" },
+              "offers": { "@type": "Offer", "price": "350", "priceCurrency": "MXN" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Venta de computadoras y laptops",
+              "description": "Venta de equipos de cómputo nuevos y seminuevos. PCs y laptops para hogar, oficina y gaming en Tijuana, Baja California.",
+              "serviceType": "Computer Sales",
+              "provider": { "@type": "LocalBusiness", "name": "Zorro Tech" },
+              "areaServed": { "@type": "City", "name": "Tijuana" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Diseño y desarrollo de sitios web",
+              "description": "Creación de páginas web profesionales, rápidas, modernas y optimizadas para Google. Sitios web para negocios, restaurantes, tiendas y emprendedores en Tijuana y toda Baja California. Entrega en 7 días.",
+              "serviceType": "Web Design",
+              "provider": { "@type": "LocalBusiness", "name": "Zorro Tech" },
+              "areaServed": { "@type": "State", "name": "Baja California" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Marketing digital y publicidad en redes sociales",
+              "description": "Estrategias de marketing digital, gestión de redes sociales, publicidad en Facebook, Instagram y Google Ads para negocios en Tijuana y México.",
+              "serviceType": "Digital Marketing",
+              "provider": { "@type": "LocalBusiness", "name": "Zorro Tech" },
+              "areaServed": { "@type": "Country", "name": "México" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Invitaciones digitales para bodas, XV años y eventos",
+              "description": "Invitaciones digitales interactivas para bodas, quinceañeras, cumpleaños y eventos especiales. Compártelas por WhatsApp al instante. Diseño personalizado.",
+              "serviceType": "Digital Invitations",
+              "provider": { "@type": "LocalBusiness", "name": "Zorro Tech" },
+              "areaServed": { "@type": "Country", "name": "México" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Tarjetas de presentación digitales",
+              "description": "Tarjetas de presentación digitales profesionales con enlace propio. Incluyen redes sociales, WhatsApp, correo y sitio web. Perfectas para emprendedores y profesionistas.",
+              "serviceType": "Digital Business Cards",
+              "provider": { "@type": "LocalBusiness", "name": "Zorro Tech" },
+              "areaServed": { "@type": "Country", "name": "México" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Automatización de procesos y software a medida",
+              "description": "Desarrollo de software personalizado, chatbots, automatizaciones y herramientas digitales para optimizar los procesos de tu negocio.",
+              "serviceType": "Business Automation",
+              "provider": { "@type": "LocalBusiness", "name": "Zorro Tech" }
+            }
+          }
+        ]
+      },
       "sameAs": [
         "https://www.facebook.com/profile.php?id=61594649223468",
         "https://www.instagram.com/somoszorrotech/",
         "https://www.tiktok.com/@somoszorrotech"
       ],
-      "openingHours": "Mo-Fr 09:00-18:00",
+      "openingHours": "Mo-Sa 09:00-19:00",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+52-664-549-5385",
         "contactType": "customer service",
+        "contactOption": "TollFree",
         "areaServed": "MX",
         "availableLanguage": "Spanish"
       }
+    }
+    </script>
+
+    <!-- ── FAQ Schema (para aparecer en respuestas de ChatGPT/Perplexity) ── -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Dónde puedo llevar mi laptop a reparar en Tijuana?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zorro Tech ofrece mantenimiento y reparación de laptops y computadoras en Tijuana, Baja California. También contamos con servicio a domicilio. El costo del mantenimiento básico comienza en $350 MXN. Contáctanos por WhatsApp al +52-664-549-5385."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Quién hace páginas web para negocios en Tijuana?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zorro Tech diseña y desarrolla páginas web profesionales para negocios en Tijuana y Baja California. Los sitios son modernos, rápidos y optimizados para Google. El tiempo de entrega es de 7 días. Visita zorrotech.online para más información."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dónde hacer invitaciones digitales para boda en México?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zorro Tech crea invitaciones digitales interactivas para bodas, quinceañeras, cumpleaños y cualquier evento especial. Se comparten fácilmente por WhatsApp. Son personalizadas y se entregan rápido. Contáctanos en zorrotech.online."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo hacer una tarjeta de presentación digital?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zorro Tech crea tarjetas de presentación digitales con un enlace personalizado que incluye tus redes sociales, WhatsApp, correo y sitio web. Son ideales para emprendedores y profesionistas que quieren compartir su contacto de forma moderna."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Hay agencias de marketing digital en Tijuana?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Zorro Tech ofrece servicios de marketing digital en Tijuana, incluyendo publicidad en Facebook, Instagram y Google Ads, gestión de redes sociales y creación de contenido para negocios locales y nacionales."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dónde comprar computadoras en Tijuana?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zorro Tech vende computadoras de escritorio y laptops nuevas y seminuevas en Tijuana, Baja California. Contamos con equipos para hogar, oficina y gaming a buenos precios. Contáctanos por WhatsApp al +52-664-549-5385."
+          }
+        }
+      ]
     }
     </script>
   </head>
