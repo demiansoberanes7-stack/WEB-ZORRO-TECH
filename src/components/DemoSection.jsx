@@ -124,17 +124,6 @@ export default function DemoSection() {
       >
         {supportLabel}
       </a>
-
-      {/* CTA flotante – solo desktop */}
-      <a
-        className="zt-cta-float"
-        href="https://wa.me/526645495385?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20asesoramiento%20gratuito."
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Asesoramiento gratuito"
-      >
-        Asesoramiento gratuito
-      </a>
     </section>
   );
 }
