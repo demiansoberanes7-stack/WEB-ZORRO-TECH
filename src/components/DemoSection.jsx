@@ -10,10 +10,9 @@ const BLOG_SLIDES = [
   { src: '/assets/blogs/blog-1791528386972.png', alt: 'Psicología del consumidor – Blog Zorro Tech' },
   { src: '/assets/blogs/blog-1791524877333.png', alt: 'FOMO – Blog Zorro Tech' },
   { src: '/assets/blogs/blog-1791525771684.png', alt: 'Marketing digital – Blog Zorro Tech' },
-  { src: '/assets/blogs/blog-1791523861581.png', alt: 'Tecnología – Blog Zorro Tech' },
 ];
 
-const AUTO_PLAY_DELAY = 7000;
+const AUTO_PLAY_DELAY = 4667; // 50% más rápido que 7s
 
 export default function DemoSection() {
   const [current, setCurrent] = useState(0);
