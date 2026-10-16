@@ -116,8 +116,25 @@ export default function DemoSection() {
         </Reveal>
       </div>
 
-      <a className="zt-whatsapp" href={whatsappUrl} target="_blank" rel="noopener noreferrer" aria-label="Hablar por WhatsApp">
+      <a
+        className="zt-whatsapp"
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Hablar por WhatsApp"
+      >
         {supportLabel}
+      </a>
+
+      {/* CTA flotante – solo desktop */}
+      <a
+        className="zt-cta-float"
+        href="https://wa.me/526645495385?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20asesoramiento%20gratuito."
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Asesoramiento gratuito"
+      >
+        Asesoramiento gratuito
       </a>
     </section>
   );
