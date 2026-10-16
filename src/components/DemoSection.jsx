@@ -7,9 +7,8 @@ import './DemoSection.css';
 const whatsappUrl = 'https://wa.me/526645495385?text=Hola%2C%20me%20gustar%C3%ADa%20conocer%20los%20servicios%20de%20Zorro%20Tech.';
 
 const BLOG_SLIDES = [
-  { src: '/assets/blogs/blog-1791528386972.png', alt: 'Psicología del consumidor – Blog Zorro Tech' },
-  { src: '/assets/blogs/blog-1791524877333.png', alt: 'FOMO – Blog Zorro Tech' },
-  { src: '/assets/blogs/blog-1791525771684.png', alt: 'Marketing digital – Blog Zorro Tech' },
+  { src: '/assets/blogs/blog-1791528386972.png', alt: 'Psicología del consumidor – Blog Zorro Tech', to: '/blog/1791528389061' },
+  { src: '/assets/blogs/blog-1791524877333.png', alt: 'FOMO – Blog Zorro Tech', to: '/blog/1791524879383' },
 ];
 
 const AUTO_PLAY_DELAY = 4667; // 50% más rápido que 7s
@@ -68,7 +67,7 @@ export default function DemoSection() {
               {BLOG_SLIDES.map((slide, i) => (
                 <Link
                   key={slide.src}
-                  to="/blog"
+                  to={slide.to || '/blog'}
                   className="zt-carousel__slide zt-demo__box"
                   tabIndex={i === current ? 0 : -1}
                   aria-hidden={i !== current}
@@ -108,7 +107,7 @@ export default function DemoSection() {
         <Reveal direction="up" delay={0.1}>
           <p
             className="zt-demo__notice zt-demo__notice--bold"
-            onClick={() => navigate('/blog')}
+            onClick={() => navigate(BLOG_SLIDES[current]?.to || '/blog')}
           >
             Haz clic en la imagen para leer el artículo completo
           </p>
