@@ -29,9 +29,11 @@
 @media (max-width: 720px) {
   .zt-whatsapp { padding: 13px; right: 14px; bottom: 14px; }
   .zt-whatsapp span { display: none; }
-  .zt-demo__shell { margin: 28px auto 0; border-radius: 16px; overflow: hidden; }
+  .zt-demo__shell { margin: 20px auto 0; padding: 0; border-radius: 16px; overflow: hidden; }
   .zt-demo__glow { display: none; }
   .zt-demo__box { border-radius: 16px; min-height: unset; }
   .zt-demo__play { right: 12px; bottom: 12px; width: 56px; height: 42px; border-radius: 10px; }
   .zt-demo__play svg { width: 20px; height: 20px; }
+  .zt-carousel { border-radius: 16px; }
+  .zt-demo__notice--bold { font-size: 13px; font-weight: 500; color: rgba(17,17,17,0.55); margin-top: 12px; }
 }

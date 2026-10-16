@@ -111,7 +111,7 @@ export default function DemoSection() {
             className="zt-demo__notice zt-demo__notice--bold"
             onClick={() => navigate('/blog')}
           >
-            👆 Haz clic en la imagen para leer el artículo completo
+            Haz clic en la imagen para leer el artículo completo
           </p>
         </Reveal>
       </div>
