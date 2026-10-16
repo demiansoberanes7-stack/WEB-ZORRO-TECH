@@ -66,7 +66,7 @@ function Mockup({ card }) {
       />
     </div>}
     {card.preview === 'crm' && <div className="zt-preview-board zt-preview-board--img">
-      <img src="/assets/crm-dashboard.png" alt="Dashboard CRM Zorro Tech" />
+      <img src="/assets/crm-zorro.png" alt="CRM Zorro Tech" />
     </div>}
     {card.preview === 'campaigns' && <div className="zt-preview-campaign zt-preview-campaign--img">
       <img src="/assets/meta-leads.png" alt="Centro de clientes potenciales Meta Business" />

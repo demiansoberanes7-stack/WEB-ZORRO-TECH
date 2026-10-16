@@ -78,6 +78,14 @@
   object-position: top center !important;
 }
 
+.zt-preview-board--img {
+  background: #ffffff !important;
+}
+
+.zt-preview-board--img img {
+  object-position: top center !important;
+}
+
 .zt-preview-media--video video {
   position: absolute !important;
   inset: 0 !important;
