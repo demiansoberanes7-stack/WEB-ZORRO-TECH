@@ -51,14 +51,19 @@ function CardAction({ action }) {
 function Mockup({ card }) {
   return <div className={`zt-portfolio-preview zt-portfolio-preview--${card.preview}`}>
     <div className="zt-preview-toolbar"><span className="zt-preview-dots"><i /><i /><i /></span><span>{card.preview === 'crm' ? 'En desarrollo' : 'Vista ilustrativa'}</span></div>
-    {card.preview === 'web' && <div className="zt-preview-web">
-      <span className="zt-preview-eyebrow">TU MARCA · TU ESPACIO</span>
-      <strong>Tu negocio,<br />en digital.</strong>
-      <div className="zt-preview-lines"><i /><i /></div>
-      <div className="zt-preview-tiles"><i /><i /><i /></div>
+    {card.preview === 'web' && <div className="zt-preview-web zt-preview-web--img">
+      <img src="/assets/tiger.png" alt="Sitio web Tiger Constructora hecho por Zorro Tech" />
     </div>}
-    {card.preview === 'media' && <div className="zt-preview-media">
-      {['Diseño', 'Video', 'Redes'].map((label, index) => <div key={label}><span>{['✦', '▷', '◎'][index]}</span><b>{label}</b></div>)}
+    {card.preview === 'media' && <div className="zt-preview-media zt-preview-media--video">
+      <video
+        src="/assets/portafolio-multimedia/video-estrategias.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        aria-label="Video de estrategias de contenido"
+      />
     </div>}
     {card.preview === 'crm' && <div className="zt-preview-board">
       {['Contactos', 'Seguimiento', 'Tareas'].map(label => <div key={label}><b>{label}</b>{[0, 1, 2].map(i => <div className="zt-preview-task" key={i}><i /><i /></div>)}</div>)}
@@ -68,7 +73,7 @@ function Mockup({ card }) {
       <div className="zt-preview-stages"><span>Objetivo</span><span>Creatividad</span><span>Difusión</span></div>
     </div>}
     {card.preview === 'career' && <div className="zt-preview-career">
-      {card.tags.map((tag, index) => <div key={tag}><span>{index === 2 ? <svg viewBox="0 0 576 512" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M384 160c-17.7 0-32-14.3-32-32s14.3-32 32-32H544c17.7 0 32 14.3 32 32V288c0 17.7-14.3 32-32 32s-32-14.3-32-32V205.3L342.6 374.6c-12.5 12.5-32.8 12.5-45.3 0L192 269.3 54.6 406.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160c12.5-12.5 32.8-12.5 45.3 0L320 306.7 466.7 160H384z"/></svg> : ['</>', '⌘'][index]}</span><div><b>{tag}</b><div className="zt-preview-lines"><i /><i /></div></div></div>)}
+      {card.tags.map((tag, index) => <div key={tag}><span>{index === 2 ? <svg viewBox="0 0 576 512" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M384 160c-17.7 0-32-14.3-32-32s14.3-32 32-32H544c17.7 0 32 14.3 32 32V288c0 17.7-14.3 32-32 32s-32-14.3-32-32V205.3L342.6 374.6c-12.5 12.5-32.8 12.5-45.3 0L192 269.3 54.6 406.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160c12.5-12.5 32.8-12.5 45.3 0L320 306.7 466.7 160H384z"/></svg> : ['</>', '⌘'][index]}}</span><div><b>{tag}</b><div className="zt-preview-lines"><i /><i /></div></div></div>)}
     </div>}
     <div className="zt-preview-tags">{card.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
   </div>;

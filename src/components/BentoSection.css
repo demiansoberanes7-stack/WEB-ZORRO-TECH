@@ -42,6 +42,16 @@
 .zt-preview-media > div:nth-child(3) { background: linear-gradient(160deg, #111111, #333333); }
 .zt-preview-media span { font-size: 42px; }
 .zt-preview-media b { font-size: 12px; }
+/* Real image preview (web card) */
+.zt-preview-web--img { padding: 0 !important; background: transparent !important; border: none !important; overflow: hidden; border-radius: 16px; flex: 1; }
+.zt-preview-web--img img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; border-radius: 16px; }
+/* Real video preview (media card) */
+.zt-preview-media--video { padding: 0 !important; flex: 1; overflow: hidden; border-radius: 16px; background: #111; }
+.zt-preview-media--video video { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 16px; }
+/* Real image preview (crm / campaigns cards) */
+.zt-preview-board--img, .zt-preview-campaign--img { padding: 0 !important; background: transparent !important; border: none !important; overflow: hidden; border-radius: 16px; flex: 1; }
+.zt-preview-board--img img, .zt-preview-campaign--img img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; border-radius: 16px; }
+
 .zt-preview-board { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; flex: 1; }
 .zt-preview-board > div { padding: 10px; background: #f0f0ee; border-radius: 12px; }
 .zt-preview-board b { display: block; font-size: 10px; color: rgba(17,17,17,0.5); margin-bottom: 12px; overflow-wrap: anywhere; }
