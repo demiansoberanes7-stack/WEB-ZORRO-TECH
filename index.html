@@ -2,37 +2,41 @@
 <html lang="es-MX">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/jpeg" href="/assets/zorro-logo.jpg" />
+    <link rel="icon" type="image/png" href="/assets/zorro-logo.png" />
+    <link rel="apple-touch-icon" href="/assets/zorro-logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#FFFEFC" />
-    <meta name="description" content="Especialistas en mantenimiento y venta de equipo de cómputo, desarrollo de sitios web y campañas de marketing digital en Tijuana, Baja California, México." />
-    <title>Zorro Tech — Mantenimiento de cómputo, sitios web y marketing en Tijuana</title>
+    <meta name="description" content="Especialistas en mantenimiento y reparación de computadoras, diseño de páginas web profesionales y marketing digital en Tijuana, Baja California, México y sur de California, USA. Atención a clientes en México y Estados Unidos." />
+    <title>Zorro Tech — Mantenimiento de cómputo, páginas web y marketing · México y USA</title>
 
-    <!-- ── Geo-targeting México ── -->
-    <meta name="geo.region"       content="MX-BCN" />
-    <meta name="geo.placename"    content="Tijuana, Baja California, México" />
+    <!-- ── Geo-targeting: México & United States (Binacional Cali-Baja) ── -->
+    <meta name="geo.region"       content="MX-BCN, US-CA" />
+    <meta name="geo.placename"    content="Tijuana, Baja California, México / San Diego, California, USA" />
     <meta name="geo.position"     content="32.5027;-117.0037" />
     <meta name="ICBM"             content="32.5027, -117.0037" />
     <meta name="language"         content="Spanish" />
-    <meta name="content-language" content="es-MX" />
+    <meta name="content-language" content="es-MX, es-US, en-US" />
+    <meta name="coverage"         content="Mexico, United States, Tijuana, San Diego, Baja California, California" />
+    <meta name="target_country"   content="mx, us" />
+    <meta name="audience"         content="Mexico, United States" />
 
-    <!-- ── Hreflang ── -->
+    <!-- ── Hreflang (Exclusivo México y Estados Unidos) ── -->
     <link rel="canonical" href="https://zorrotech.online/" />
     <link rel="alternate" href="https://zorrotech.online/" hreflang="es-MX" />
-    <link rel="alternate" href="https://zorrotech.online/" hreflang="es" />
-    <link rel="alternate" href="https://zorrotech.online/" hreflang="x-default" />
+    <link rel="alternate" href="https://zorrotech.online/" hreflang="es-US" />
+    <link rel="alternate" href="https://zorrotech.online/" hreflang="en-US" />
 
     <!-- ── Open Graph / Redes sociales ── -->
     <meta property="og:type"        content="website" />
     <meta property="og:locale"      content="es_MX" />
     <meta property="og:site_name"   content="Zorro Tech" />
-    <meta property="og:title"       content="Zorro Tech — Mantenimiento de cómputo, sitios web y marketing en Tijuana" />
-    <meta property="og:description" content="Especialistas en mantenimiento y venta de equipo de cómputo, desarrollo de sitios web y campañas de marketing digital en Tijuana, BC, México." />
+    <meta property="og:title"       content="Zorro Tech — Mantenimiento de cómputo, páginas web y marketing · México y USA" />
+    <meta property="og:description" content="Servicios tecnológicos en Tijuana, Baja California, México y sur de California, USA: mantenimiento de computadoras, desarrollo web y marketing digital para México y Estados Unidos." />
     <meta property="og:url"         content="https://zorrotech.online/" />
     <meta property="og:image"       content="https://zorrotech.online/assets/zorro-logo.jpg" />
     <meta name="twitter:card"        content="summary_large_image" />
-    <meta name="twitter:title"       content="Zorro Tech — Mantenimiento de cómputo, sitios web y marketing en Tijuana" />
-    <meta name="twitter:description" content="Especialistas en mantenimiento y venta de equipo de cómputo, desarrollo de sitios web y campañas de marketing digital en Tijuana, BC, México." />
+    <meta name="twitter:title"       content="Zorro Tech — Mantenimiento de cómputo, páginas web y marketing · México y USA" />
+    <meta name="twitter:description" content="Servicios tecnológicos en Tijuana, Baja California, México y sur de California, USA: mantenimiento de computadoras, desarrollo web y marketing digital para México y Estados Unidos." />
     <meta name="twitter:image"       content="https://zorrotech.online/assets/zorro-logo.jpg" />
 
     <!-- ── Fuentes (Figtree, Outfit e Inter) ── -->
@@ -40,13 +44,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- ── Google Analytics (GA4) ── -->
+    <!-- ── Google Analytics (GA4 con filtro anti-bots) ── -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X72PGXDZXK"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-X72PGXDZXK');
+
+      // Evitar que bots automatizados / headless crawlers extranjeros contaminen analíticas
+      var isAutomatedBot = !!(
+        navigator.webdriver ||
+        window.__nightmare ||
+        window.callPhantom ||
+        window._phantom ||
+        (navigator.userAgent && /bot|crawl|spider|slurp|headless|phantom|selenium|puppeteer/i.test(navigator.userAgent))
+      );
+
+      if (!isAutomatedBot) {
+        gtag('config', 'G-X72PGXDZXK');
+      }
     </script>
 
     <!-- ── Structured Data: LocalBusiness + Servicios (AEO/LLM SEO) ── -->
@@ -55,16 +71,16 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Zorro Tech",
-      "alternateName": ["Zorro Tech Tijuana", "ZorroTech", "Zorro Tech MX"],
-      "description": "Empresa de tecnología en Tijuana, Baja California, México. Ofrecemos mantenimiento y reparación de computadoras y laptops, venta de equipos de cómputo, diseño y desarrollo de sitios web, marketing digital, publicidad en redes sociales, invitaciones digitales para bodas y XV años, tarjetas de presentación digitales y automatización de procesos para negocios.",
+      "alternateName": ["Zorro Tech Tijuana", "ZorroTech", "Zorro Tech MX", "Zorro Tech USA", "Zorro Tech California"],
+      "description": "Empresa de tecnología en Tijuana, Baja California, México y servicio para clientes en el sur de California / Estados Unidos y todo México. Ofrecemos mantenimiento y reparación de computadoras y laptops, venta de equipos de cómputo, diseño y desarrollo de sitios web profesionales, marketing digital, publicidad en redes sociales, invitaciones digitales para bodas y XV años, tarjetas de presentación digitales y automatización de procesos para negocios.",
       "url": "https://zorrotech.online/",
       "logo": "https://zorrotech.online/assets/zorro-logo.jpg",
       "image": "https://zorrotech.online/assets/zorro-logo.jpg",
       "telephone": "+52-664-549-5385",
       "email": "axel_soberanes@zorrotech.online",
       "priceRange": "$$",
-      "currenciesAccepted": "MXN",
-      "paymentAccepted": "Efectivo, Transferencia bancaria, OXXO Pay",
+      "currenciesAccepted": "MXN, USD",
+      "paymentAccepted": "Efectivo, Transferencia bancaria, Zelle, PayPal, Tarjeta de crédito/débito, OXXO Pay",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Tijuana",
@@ -78,10 +94,15 @@
         "longitude": -117.0037
       },
       "areaServed": [
+        { "@type": "Country", "name": "Mexico" },
+        { "@type": "Country", "name": "United States" },
+        { "@type": "State", "name": "Baja California" },
+        { "@type": "State", "name": "California" },
         { "@type": "City", "name": "Tijuana" },
-        { "@type": "City", "name": "Ensenada" },
+        { "@type": "City", "name": "San Diego" },
+        { "@type": "City", "name": "Chula Vista" },
         { "@type": "City", "name": "Rosarito" },
-        { "@type": "State", "name": "Baja California" }
+        { "@type": "City", "name": "Ensenada" }
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -118,7 +139,12 @@
               "description": "Creación de páginas web profesionales, rápidas, modernas y optimizadas para Google. Sitios web para negocios, restaurantes, tiendas y emprendedores en Tijuana y toda Baja California. Entrega en 7 días.",
               "serviceType": "Web Design",
               "provider": { "@type": "LocalBusiness", "name": "Zorro Tech" },
-              "areaServed": { "@type": "State", "name": "Baja California" }
+              "areaServed": [
+                { "@type": "Country", "name": "Mexico" },
+                { "@type": "Country", "name": "United States" },
+                { "@type": "State", "name": "Baja California" },
+                { "@type": "State", "name": "California" }
+              ]
             }
           },
           {
@@ -126,10 +152,13 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Marketing digital y publicidad en redes sociales",
-              "description": "Estrategias de marketing digital, gestión de redes sociales, publicidad en Facebook, Instagram y Google Ads para negocios en Tijuana y México.",
+              "description": "Estrategias de marketing digital, gestión de redes sociales, publicidad en Facebook, Instagram y Google Ads para negocios en Tijuana, México y Estados Unidos.",
               "serviceType": "Digital Marketing",
               "provider": { "@type": "LocalBusiness", "name": "Zorro Tech" },
-              "areaServed": { "@type": "Country", "name": "México" }
+              "areaServed": [
+                { "@type": "Country", "name": "Mexico" },
+                { "@type": "Country", "name": "United States" }
+              ]
             }
           },
           {
@@ -137,10 +166,13 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Invitaciones digitales para bodas, XV años y eventos",
-              "description": "Invitaciones digitales interactivas para bodas, quinceañeras, cumpleaños y eventos especiales. Compártelas por WhatsApp al instante. Diseño personalizado.",
+              "description": "Invitaciones digitales interactivas para bodas, quinceañeras, cumpleaños y eventos especiales. Compártelas por WhatsApp al instante. Diseño personalizado para eventos en México y USA.",
               "serviceType": "Digital Invitations",
               "provider": { "@type": "LocalBusiness", "name": "Zorro Tech" },
-              "areaServed": { "@type": "Country", "name": "México" }
+              "areaServed": [
+                { "@type": "Country", "name": "Mexico" },
+                { "@type": "Country", "name": "United States" }
+              ]
             }
           },
           {
@@ -148,10 +180,13 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Tarjetas de presentación digitales",
-              "description": "Tarjetas de presentación digitales profesionales con enlace propio. Incluyen redes sociales, WhatsApp, correo y sitio web. Perfectas para emprendedores y profesionistas.",
+              "description": "Tarjetas de presentación digitales profesionales con enlace propio. Incluyen redes sociales, WhatsApp, correo y sitio web. Para profesionistas en México y Estados Unidos.",
               "serviceType": "Digital Business Cards",
               "provider": { "@type": "LocalBusiness", "name": "Zorro Tech" },
-              "areaServed": { "@type": "Country", "name": "México" }
+              "areaServed": [
+                { "@type": "Country", "name": "Mexico" },
+                { "@type": "Country", "name": "United States" }
+              ]
             }
           },
           {
@@ -159,9 +194,13 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Automatización de procesos y software a medida",
-              "description": "Desarrollo de software personalizado, chatbots, automatizaciones y herramientas digitales para optimizar los procesos de tu negocio.",
+              "description": "Desarrollo de software personalizado, chatbots, automatizaciones y herramientas digitales para optimizar los procesos de tu negocio en México y Estados Unidos.",
               "serviceType": "Business Automation",
-              "provider": { "@type": "LocalBusiness", "name": "Zorro Tech" }
+              "provider": { "@type": "LocalBusiness", "name": "Zorro Tech" },
+              "areaServed": [
+                { "@type": "Country", "name": "Mexico" },
+                { "@type": "Country", "name": "United States" }
+              ]
             }
           }
         ]
@@ -177,8 +216,8 @@
         "telephone": "+52-664-549-5385",
         "contactType": "customer service",
         "contactOption": "TollFree",
-        "areaServed": "MX",
-        "availableLanguage": "Spanish"
+        "areaServed": ["MX", "US"],
+        "availableLanguage": ["Spanish", "English"]
       }
     }
     </script>
