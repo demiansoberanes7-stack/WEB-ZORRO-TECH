@@ -77,6 +77,66 @@
       if (!isAutomatedBot && !isForeignZone) {
         gtag('config', 'G-X72PGXDZXK');
       }
+
+      // 3. Rastreo automático de eventos clave (WhatsApp, Redes, Teléfono, Correo, Servicios)
+      document.addEventListener('click', function(e) {
+        var el = e.target.closest('a, button');
+        if (!el) return;
+        var href = (el.getAttribute('href') || '').trim();
+        var txt = (el.innerText || el.getAttribute('aria-label') || '').trim().replace(/\s+/g, ' ').substring(0, 50);
+
+        if (typeof gtag !== 'function') return;
+
+        // Clic a WhatsApp
+        if (href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1) {
+          gtag('event', 'click_whatsapp', {
+            event_category: 'conversion',
+            page_path: window.location.pathname,
+            link_url: href,
+            button_text: txt
+          });
+        }
+        // Clic a llamada telefónica
+        else if (href.indexOf('tel:') === 0) {
+          gtag('event', 'click_llamada', {
+            event_category: 'conversion',
+            page_path: window.location.pathname,
+            phone_number: href.replace('tel:', ''),
+            button_text: txt
+          });
+        }
+        // Clic a correo
+        else if (href.indexOf('mailto:') === 0) {
+          gtag('event', 'click_email', {
+            event_category: 'contacto',
+            page_path: window.location.pathname,
+            email: href.replace('mailto:', '').split('?')[0]
+          });
+        }
+        // Clic a redes sociales
+        else if (/facebook\.com|instagram\.com|tiktok\.com|linkedin\.com/i.test(href)) {
+          var red = 'otra';
+          if (/facebook/i.test(href)) red = 'facebook';
+          else if (/instagram/i.test(href)) red = 'instagram';
+          else if (/tiktok/i.test(href)) red = 'tiktok';
+          else if (/linkedin/i.test(href)) red = 'linkedin';
+
+          gtag('event', 'click_red_social', {
+            event_category: 'social',
+            platform: red,
+            page_path: window.location.pathname,
+            link_url: href
+          });
+        }
+        // Clic en ver servicios o cotizar
+        else if (href.indexOf('servicios') !== -1 || (el.id && el.id.indexOf('servicios') !== -1)) {
+          gtag('event', 'ver_servicios', {
+            event_category: 'interaccion',
+            page_path: window.location.pathname,
+            button_text: txt
+          });
+        }
+      }, true);
     </script>
 
     <!-- ── Structured Data: LocalBusiness + Servicios (AEO/LLM SEO) ── -->

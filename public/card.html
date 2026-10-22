@@ -22,6 +22,94 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- ── Google Analytics (GA4 con filtro anti-bots y geo-fencing MX/USA) ── -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X72PGXDZXK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    var isAutomatedBot = !!(
+      navigator.webdriver ||
+      window.__nightmare ||
+      window.callPhantom ||
+      window._phantom ||
+      (window.chrome && !window.chrome.runtime && !window.chrome.loadTimes) ||
+      !navigator.languages ||
+      navigator.languages.length === 0 ||
+      (window.screen && (window.screen.width === 0 || window.screen.height === 0)) ||
+      (navigator.userAgent && /bot|crawl|spider|slurp|headless|phantom|selenium|puppeteer|lighthouse|curl|wget/i.test(navigator.userAgent))
+    );
+
+    var isForeignZone = false;
+    try {
+      var tz = (Intl.DateTimeFormat().resolvedOptions().timeZone || '');
+      if (/Europe|Asia|Africa|Australia|Etc\/UTC|^UTC$/i.test(tz)) {
+        isForeignZone = true;
+      }
+    } catch (e) {}
+
+    if (!isAutomatedBot && !isForeignZone) {
+      gtag('config', 'G-X72PGXDZXK');
+    }
+
+    // Rastreo automático de eventos en la tarjeta digital
+    document.addEventListener('click', function(e) {
+      var el = e.target.closest('a, button');
+      if (!el) return;
+      var href = (el.getAttribute('href') || '').trim();
+      var txt = (el.innerText || el.getAttribute('aria-label') || '').trim().replace(/\s+/g, ' ').substring(0, 50);
+
+      if (typeof gtag !== 'function') return;
+
+      if (href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1) {
+        gtag('event', 'click_whatsapp', {
+          event_category: 'conversion',
+          origen: 'tarjeta_digital',
+          page_path: window.location.pathname,
+          link_url: href,
+          button_text: txt
+        });
+      } else if (href.indexOf('tel:') === 0) {
+        gtag('event', 'click_llamada', {
+          event_category: 'conversion',
+          origen: 'tarjeta_digital',
+          page_path: window.location.pathname,
+          phone_number: href.replace('tel:', ''),
+          button_text: txt
+        });
+      } else if (href.indexOf('mailto:') === 0) {
+        gtag('event', 'click_email', {
+          event_category: 'contacto',
+          origen: 'tarjeta_digital',
+          page_path: window.location.pathname,
+          email: href.replace('mailto:', '').split('?')[0]
+        });
+      } else if (/facebook\.com|instagram\.com|tiktok\.com|linkedin\.com/i.test(href)) {
+        var red = 'otra';
+        if (/facebook/i.test(href)) red = 'facebook';
+        else if (/instagram/i.test(href)) red = 'instagram';
+        else if (/tiktok/i.test(href)) red = 'tiktok';
+        else if (/linkedin/i.test(href)) red = 'linkedin';
+
+        gtag('event', 'click_red_social', {
+          event_category: 'social',
+          origen: 'tarjeta_digital',
+          platform: red,
+          page_path: window.location.pathname,
+          link_url: href
+        });
+      } else if (href.indexOf('servicios') !== -1 || (el.id && el.id.indexOf('servicios') !== -1)) {
+        gtag('event', 'ver_servicios', {
+          event_category: 'interaccion',
+          origen: 'tarjeta_digital',
+          page_path: window.location.pathname,
+          button_text: txt
+        });
+      }
+    }, true);
+  </script>
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
