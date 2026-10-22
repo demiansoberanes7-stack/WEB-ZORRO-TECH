@@ -3,6 +3,22 @@
 User-agent: *
 Allow: /
 
+# Bloquear bots agresivos / scrapers que consumen recursos y falsean estadísticas
+User-agent: AhrefsBot
+User-agent: SemrushBot
+User-agent: DotBot
+User-agent: PetalBot
+User-agent: MJ12bot
+User-agent: MegaIndex
+User-agent: Bytespider
+User-agent: Baiduspider
+User-agent: YandexBot
+User-agent: SeznamBot
+User-agent: DataForSeoBot
+User-agent: ZoominfoBot
+User-agent: CriteoBot
+Disallow: /
+
 # AI / LLM crawlers — permitidos expresamente
 User-agent: GPTBot
 Allow: /

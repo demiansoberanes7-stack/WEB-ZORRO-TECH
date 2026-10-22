@@ -44,23 +44,37 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- ── Google Analytics (GA4 con filtro anti-bots) ── -->
+    <!-- ── Google Analytics (GA4 con filtro anti-bots y geo-fencing MX/USA) ── -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X72PGXDZXK"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      // Evitar que bots automatizados / headless crawlers extranjeros contaminen analíticas
+      // 1. Detección de navegadores headless / bots automatizados
       var isAutomatedBot = !!(
         navigator.webdriver ||
         window.__nightmare ||
         window.callPhantom ||
         window._phantom ||
-        (navigator.userAgent && /bot|crawl|spider|slurp|headless|phantom|selenium|puppeteer/i.test(navigator.userAgent))
+        (window.chrome && !window.chrome.runtime && !window.chrome.loadTimes) ||
+        !navigator.languages ||
+        navigator.languages.length === 0 ||
+        (window.screen && (window.screen.width === 0 || window.screen.height === 0)) ||
+        (navigator.userAgent && /bot|crawl|spider|slurp|headless|phantom|selenium|puppeteer|lighthouse|curl|wget/i.test(navigator.userAgent))
       );
 
-      if (!isAutomatedBot) {
+      // 2. Detección de zona horaria extranjera (Polonia: Europe/Warsaw, Francia: Europe/Paris, etc.)
+      var isForeignZone = false;
+      try {
+        var tz = (Intl.DateTimeFormat().resolvedOptions().timeZone || '');
+        if (/Europe|Asia|Africa|Australia|Etc\/UTC|^UTC$/i.test(tz)) {
+          isForeignZone = true;
+        }
+      } catch (e) {}
+
+      // Solo registrar en GA4 a usuarios reales de nuestra región geográfica
+      if (!isAutomatedBot && !isForeignZone) {
         gtag('config', 'G-X72PGXDZXK');
       }
     </script>

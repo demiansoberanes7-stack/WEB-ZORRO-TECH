@@ -3,8 +3,18 @@
   RewriteEngine On
   RewriteBase /
   
-  # 0. Bloquear bots de rastreo agresivos / scrapers extranjeros que inflan analíticas (Polonia, Francia, Rusia, etc.)
-  RewriteCond %{HTTP_USER_AGENT} (PetalBot|AhrefsBot|SemrushBot|MJ12bot|DotBot|Baiduspider|YandexBot|SeznamBot|MegaIndex|Bytespider|DataForSeoBot|ZoominfoBot|CriteoBot|Sogou) [NC]
+  # 0. Bloqueo geográfico estricto (solo México y Estados Unidos)
+  # Si Cloudflare o LiteSpeed GeoIP reportan un país y no es MX o US, rechazar con 403 Forbidden
+  RewriteCond %{HTTP:CF-IPCountry} .
+  RewriteCond %{HTTP:CF-IPCountry} !^(MX|US)$ [NC]
+  RewriteRule .* - [F,L]
+
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} .
+  RewriteCond %{ENV:GEOIP_COUNTRY_CODE} !^(MX|US)$ [NC]
+  RewriteRule .* - [F,L]
+
+  # 0.1 Bloquear bots de rastreo agresivos / scrapers extranjeros que inflan analíticas (Polonia, Francia, Rusia, etc.)
+  RewriteCond %{HTTP_USER_AGENT} (PetalBot|AhrefsBot|SemrushBot|MJ12bot|DotBot|Baiduspider|YandexBot|SeznamBot|MegaIndex|Bytespider|DataForSeoBot|ZoominfoBot|CriteoBot|Sogou|Blekkobot|BLEXBot|TurnitinBot) [NC]
   RewriteRule .* - [F,L]
 
   # 1. Si es un bot de Facebook/WhatsApp/Twitter y está pidiendo un blog, mandarlo al archivo PHP que lee los datos correctos
